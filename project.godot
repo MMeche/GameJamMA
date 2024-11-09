@@ -21,3 +21,6 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+[rendering]
+
+textures/canvas_textures/default_texture_filter=3
