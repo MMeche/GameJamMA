@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://c1qnr7iky2k6f"]
 
-[ext_resource type="PackedScene" uid="uid://b7leymer5mvxe" path="res://scene/platform_playerMelo.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://kh3tipci0ma8" path="res://scene/platform_npc.tscn" id="2_tiyu4"]
 [ext_resource type="PackedScene" uid="uid://ccua2erxjoryb" path="res://scene/actionable.tscn" id="2_yqx0l"]
 [ext_resource type="Resource" uid="uid://n1wmxpmqkak3" path="res://dialogue/main.dialogue" id="3_jme3k"]
+[ext_resource type="PackedScene" uid="uid://nqk78c318shk" path="res://scene/platform_player.tscn" id="4_osd4l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sha44"]
 radius = 15.0333
@@ -41,5 +41,5 @@ dialogue_ressource = ExtResource("3_jme3k")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformNPC/Actionable"]
 shape = SubResource("CircleShape2D_sha44")
 
-[node name="PlatformPlayer" parent="." instance=ExtResource("1")]
-position = Vector2(393.654, 427.999)
+[node name="PlatformPlayer" parent="." instance=ExtResource("4_osd4l")]
+position = Vector2(425, 422)

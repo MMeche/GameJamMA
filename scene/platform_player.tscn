@@ -1,11 +1,44 @@
-[gd_scene load_steps=29 format=3 uid="uid://nqk78c318shk"]
+[gd_scene load_steps=30 format=3 uid="uid://nqk78c318shk"]
 
-[ext_resource type="Script" path="res://platform_player.gd" id="1"]
+[ext_resource type="Script" path="res://src/platform_player.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://ddjsc5l3hsrsk" path="res://sprites/fposter,small,wall_texture,square_product,600x600.jpg" id="2_5anam"]
 [ext_resource type="Script" path="res://src/player_animation_tree.gd" id="3_y516s"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(16, 24)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xitqh"]
+radius = 14.4222
+
+[sub_resource type="Animation" id="Animation_cji22"]
+resource_name = "Player_Airborn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_wya6d"]
+resource_name = "Player_Dead"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
 
 [sub_resource type="Animation" id="Animation_1wcw7"]
 resource_name = "Player_Iddle"
@@ -39,36 +72,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_jjy6r"]
 resource_name = "Player_Run"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-
-[sub_resource type="Animation" id="Animation_cji22"]
-resource_name = "Player_Airborn"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-
-[sub_resource type="Animation" id="Animation_wya6d"]
-resource_name = "Player_Dead"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -165,7 +168,7 @@ advance_condition = &"!airborn"
 advance_mode = 2
 advance_condition = &"airborn"
 
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ub8it"]
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_iqq4m"]
 allow_transition_to_self = true
 reset_ends = true
 states/End/position = Vector2(178, 339)
@@ -194,6 +197,15 @@ polygon = PackedVector2Array(-8, -12, 8, -12, 8, 12, -8, 12)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("1")
 
+[node name="Direction" type="Marker2D" parent="."]
+
+[node name="ActionableFinder" type="Area2D" parent="Direction"]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/ActionableFinder"]
+shape = SubResource("CircleShape2D_xitqh")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 5)
 zoom = Vector2(1.6, 1.6)
@@ -213,7 +225,7 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_ub8it")
+tree_root = SubResource("AnimationNodeStateMachine_iqq4m")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/!airborn = false
 parameters/conditions/!running = false
@@ -221,8 +233,3 @@ parameters/conditions/airborn = false
 parameters/conditions/jump = false
 parameters/conditions/running = false
 script = ExtResource("3_y516s")
-
-[connection signal="is_airborn" from="." to="AnimationTree" method="_on_platform_player_is_airborn"]
-[connection signal="is_grounded" from="." to="AnimationTree" method="_on_platform_player_is_grounded"]
-[connection signal="is_jumping" from="." to="AnimationTree" method="_on_platform_player_is_jumping"]
-[connection signal="is_running" from="." to="AnimationTree" method="_on_platform_player_is_running"]
