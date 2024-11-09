@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bontoxymqfwx"]
+
+[ext_resource type="TileSet" uid="uid://ck1lq2y6qngtp" path="res://tileset.tres" id="1_o1bnq"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1282, 87)
+zoom = Vector2(4, 4)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 150, 0, 8, 0, 1, 0, 4, 0, 11, 0, 0, 0, 152, 0, 8, 0, 1, 0, 1, 0, 20, 0, 0, 0)
+tile_set = ExtResource("1_o1bnq")

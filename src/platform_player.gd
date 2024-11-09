@@ -5,6 +5,11 @@ extends CharacterBody2D
 var speed = 300.0
 var jump_speed = -400.0
 
+signal is_running(x:float)
+signal is_jumping
+signal is_airborn
+signal is_grounded
+
 # Get the gravity from the project settings so you can sync with rigid body nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -15,6 +20,7 @@ func _physics_process(delta):
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_speed
+		is_jumping.emit()
 
 	# Get the input direction.
 	var direction_left = Input.is_action_pressed("move_left")
@@ -29,3 +35,9 @@ func _process(delta: float) -> void:
 		if actionables.size() > 0 and Input.is_action_just_pressed("Actionable"):
 			# TODO afficher le bouton entrer sur l'écran ?
 			actionables[0].action()
+		if abs(velocity.x) > 0 && is_on_floor():
+			is_running.emit(velocity.x)
+		if !is_on_floor():
+			is_airborn.emit()
+		else :
+			is_grounded.emit()
