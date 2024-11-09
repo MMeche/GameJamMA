@@ -32,6 +32,8 @@ func _process(delta: float) -> void:
 	if collision :
 		vel = vel.slide(collision.get_normal())
 	
+	# Detection interaction
 	var actionables = actionable_finder.get_overlapping_areas()
-	if actionables.size() > 0:
+	if actionables.size() > 0 and Input.is_action_pressed("Actionable"):
+		# TODO afficher le bouton entrer sur l'écran ?
 		actionables[0].action()
