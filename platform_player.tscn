@@ -1,0 +1,228 @@
+[gd_scene load_steps=29 format=3 uid="uid://nqk78c318shk"]
+
+[ext_resource type="Script" path="res://platform_player.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://ddjsc5l3hsrsk" path="res://sprites/fposter,small,wall_texture,square_product,600x600.jpg" id="2_5anam"]
+[ext_resource type="Script" path="res://src/player_animation_tree.gd" id="3_y516s"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(16, 24)
+
+[sub_resource type="Animation" id="Animation_1wcw7"]
+resource_name = "Player_Iddle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_5anam")]
+}
+
+[sub_resource type="Animation" id="Animation_sk4e6"]
+resource_name = "Player_Jump"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_jjy6r"]
+resource_name = "Player_Run"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_cji22"]
+resource_name = "Player_Airborn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_wya6d"]
+resource_name = "Player_Dead"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_a2ahn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_5anam")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u1o3d"]
+_data = {
+"Player_Airborn": SubResource("Animation_cji22"),
+"Player_Dead": SubResource("Animation_wya6d"),
+"Player_Iddle": SubResource("Animation_1wcw7"),
+"Player_Jump": SubResource("Animation_sk4e6"),
+"Player_Run": SubResource("Animation_jjy6r"),
+"RESET": SubResource("Animation_a2ahn")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e3wch"]
+animation = &"Player_Airborn"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_eg0ji"]
+animation = &"Player_Dead"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wga5k"]
+animation = &"Player_Iddle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fm1nx"]
+animation = &"Player_Jump"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v54ke"]
+animation = &"Player_Run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pyu51"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y2gdy"]
+advance_mode = 2
+advance_condition = &"jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_n68cl"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0b27r"]
+advance_mode = 2
+advance_condition = &"!airborn"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4evwo"]
+advance_mode = 2
+advance_condition = &"running"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5riim"]
+advance_mode = 2
+advance_condition = &"!running"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lxe7e"]
+advance_mode = 2
+advance_condition = &"jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tktgu"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bm60l"]
+advance_mode = 2
+advance_condition = &"airborn"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_u3uq7"]
+advance_mode = 2
+advance_condition = &"!airborn"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dvs2w"]
+advance_mode = 2
+advance_condition = &"airborn"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ub8it"]
+allow_transition_to_self = true
+reset_ends = true
+states/End/position = Vector2(178, 339)
+states/Player_Airborn/node = SubResource("AnimationNodeAnimation_e3wch")
+states/Player_Airborn/position = Vector2(511, 111)
+states/Player_Dead/node = SubResource("AnimationNodeAnimation_eg0ji")
+states/Player_Dead/position = Vector2(178, 257)
+states/Player_Iddle/node = SubResource("AnimationNodeAnimation_wga5k")
+states/Player_Iddle/position = Vector2(296, 99)
+states/Player_Jump/node = SubResource("AnimationNodeAnimation_fm1nx")
+states/Player_Jump/position = Vector2(617, -38)
+states/Player_Run/node = SubResource("AnimationNodeAnimation_v54ke")
+states/Player_Run/position = Vector2(638, 293)
+states/Start/position = Vector2(123, 99)
+transitions = ["Start", "Player_Iddle", SubResource("AnimationNodeStateMachineTransition_pyu51"), "Player_Iddle", "Player_Jump", SubResource("AnimationNodeStateMachineTransition_y2gdy"), "Player_Jump", "Player_Airborn", SubResource("AnimationNodeStateMachineTransition_n68cl"), "Player_Airborn", "Player_Iddle", SubResource("AnimationNodeStateMachineTransition_0b27r"), "Player_Iddle", "Player_Run", SubResource("AnimationNodeStateMachineTransition_4evwo"), "Player_Run", "Player_Iddle", SubResource("AnimationNodeStateMachineTransition_5riim"), "Player_Run", "Player_Jump", SubResource("AnimationNodeStateMachineTransition_lxe7e"), "Player_Dead", "End", SubResource("AnimationNodeStateMachineTransition_tktgu"), "Player_Iddle", "Player_Airborn", SubResource("AnimationNodeStateMachineTransition_bm60l"), "Player_Jump", "Player_Iddle", SubResource("AnimationNodeStateMachineTransition_u3uq7"), "Player_Run", "Player_Airborn", SubResource("AnimationNodeStateMachineTransition_dvs2w")]
+graph_offset = Vector2(-52, -110)
+
+[node name="PlatformPlayer" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 13
+script = ExtResource("1")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-8, -12, 8, -12, 8, 12, -8, 12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 5)
+zoom = Vector2(1.6, 1.6)
+limit_left = -75
+limit_top = 50
+limit_right = 725
+limit_bottom = 550
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.23517e-07, 0)
+scale = Vector2(0.0266667, 0.04)
+texture = ExtResource("2_5anam")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_u1o3d")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_ub8it")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/!airborn = false
+parameters/conditions/!running = false
+parameters/conditions/airborn = false
+parameters/conditions/jump = false
+parameters/conditions/running = false
+script = ExtResource("3_y516s")
+
+[connection signal="is_airborn" from="." to="AnimationTree" method="_on_platform_player_is_airborn"]
+[connection signal="is_grounded" from="." to="AnimationTree" method="_on_platform_player_is_grounded"]
+[connection signal="is_jumping" from="." to="AnimationTree" method="_on_platform_player_is_jumping"]
+[connection signal="is_running" from="." to="AnimationTree" method="_on_platform_player_is_running"]
