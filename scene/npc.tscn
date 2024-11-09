@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://pbc3f5eb7p76"]
+
+[ext_resource type="Texture2D" uid="uid://ddjsc5l3hsrsk" path="res://sprites/fposter,small,wall_texture,square_product,600x600.jpg" id="2_e25ti"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yi53d"]
+atlas = ExtResource("2_e25ti")
+region = Rect2(139, 137, 306, 329)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mmf0l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yi53d")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4ut0"]
+size = Vector2(307, 329)
+
+[node name="npc" type="RigidBody2D"]
+position = Vector2(166, 179)
+gravity_scale = 0.0
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mmf0l")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_v4ut0")

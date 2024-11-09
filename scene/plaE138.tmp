@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://dq2giwou705an"]
+
+[ext_resource type="Script" path="res://src/player.gd" id="1_este8"]
+[ext_resource type="Texture2D" uid="uid://ddjsc5l3hsrsk" path="res://sprites/fposter,small,wall_texture,square_product,600x600.jpg" id="2_1lib6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yi53d"]
+atlas = ExtResource("2_1lib6")
+region = Rect2(139, 137, 306, 329)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mmf0l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yi53d")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qwops"]
+size = Vector2(307, 329)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6c0y0"]
+radius = 228.254
+
+[node name="player" type="CharacterBody2D"]
+position = Vector2(153, 165)
+script = ExtResource("1_este8")
+speed = null
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mmf0l")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_qwops")
+
+[node name="Direction" type="Marker2D" parent="."]
+
+[node name="ActionableFinder" type="Area2D" parent="Direction"]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/ActionableFinder"]
+shape = SubResource("CircleShape2D_6c0y0")
