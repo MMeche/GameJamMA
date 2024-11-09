@@ -9,6 +9,7 @@ signal is_running(x:float)
 signal is_jumping
 signal is_airborn
 signal is_grounded
+signal is_iddling
 
 # Get the gravity from the project settings so you can sync with rigid body nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -26,7 +27,15 @@ func _physics_process(delta):
 	var direction_left = Input.is_action_pressed("move_left")
 	var direction_right = Input.is_action_pressed("move_right")
 	velocity.x = (int(direction_left)*-1 +int(direction_right)*1) * speed
-
+	
+	if abs(velocity.x) > 0 && is_on_floor():
+		is_running.emit(velocity.x)
+	if !is_on_floor():
+		is_airborn.emit()
+	else :
+		is_grounded.emit()
+	if velocity.x == 0 && is_on_floor():
+		is_iddling.emit()
 	move_and_slide()
 
 func _process(delta: float) -> void:
@@ -35,9 +44,4 @@ func _process(delta: float) -> void:
 		if actionables.size() > 0 and Input.is_action_just_pressed("Actionable"):
 			# TODO afficher le bouton entrer sur l'écran ?
 			actionables[0].action()
-		if abs(velocity.x) > 0 && is_on_floor():
-			is_running.emit(velocity.x)
-		if !is_on_floor():
-			is_airborn.emit()
-		else :
-			is_grounded.emit()
+		
