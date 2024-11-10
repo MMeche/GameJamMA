@@ -1,4 +1,4 @@
-extends Sprite2D
+extends AnimatedSprite2D
 
 var money_value = 1
 

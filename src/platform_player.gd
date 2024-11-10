@@ -58,6 +58,7 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 			var node = area.get_parent() as Node
 			money_amount += node.money_value
 			PlayerStats.player_money = money_amount;
+			area.get_parent().queue_free()
 			print("Money amount = ", money_amount)
 			
 	if healt_amount <= 0:
