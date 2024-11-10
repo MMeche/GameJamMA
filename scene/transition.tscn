@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://da20ke6yluqua"]
+[gd_scene load_steps=5 format=3 uid="uid://1o6y5a0yj60"]
 
-[ext_resource type="Theme" uid="uid://dcbaw7faykseq" path="res://Ressources/theme.tres" id="1_bh8fu"]
+[ext_resource type="Theme" uid="uid://b5ioge75ojf4m" path="res://Ressources/theme.tres" id="1_bh8fu"]
 [ext_resource type="Texture2D" uid="uid://cauxpnjf1ek2s" path="res://Ressources/big_sun.png" id="1_qq0gy"]
 [ext_resource type="Script" path="res://scene/transition.gd" id="2_wwill"]
 [ext_resource type="Texture2D" uid="uid://bxrhugkpyh465" path="res://Ressources/big_moon.png" id="3_ja8ra"]
