@@ -82,7 +82,6 @@ limit_right = 420
 limit_bottom = 208
 
 [node name="CanvasLayer" type="CanvasLayer" parent="platformer_caribou/Camera2D"]
-visible = false
 
 [node name="UiNightTimer" parent="platformer_caribou/Camera2D/CanvasLayer" instance=ExtResource("1_4dmmn")]
 

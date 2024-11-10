@@ -109,4 +109,4 @@ func change_scene() -> void:
 	_on_fade_out_complete()
 
 func _on_fade_out_complete() -> void:
-	get_tree().change_scene_to_file(next_scene_path)
+	get_tree().change_scene_to_file("res://Levels/Level1.tscn")
