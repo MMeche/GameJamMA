@@ -8,3 +8,9 @@ var player_money = 0
 var player_body: CharacterBody2D
 
 var nb_Days = 1
+
+var caribou = false
+var harfang = false
+var renard = false
+
+var spawnPoint : int = 0
