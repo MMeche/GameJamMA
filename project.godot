@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-
 Status="*res://dialogue/museum.gd"
 PlayerStats="*res://Global Variables/Player_Stats.gd"
 
