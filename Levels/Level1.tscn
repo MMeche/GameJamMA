@@ -25,6 +25,14 @@ scale = Vector2(5.625, 770.5)
 texture = SubResource("GradientTexture1D_dgi2b")
 metadata/_edit_lock_ = true
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-45, 89)
+zoom = Vector2(6, 6)
+limit_left = 11
+limit_top = 2
+limit_right = 792
+limit_bottom = 170
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(422, 92)
 texture = ExtResource("1_7jhwc")

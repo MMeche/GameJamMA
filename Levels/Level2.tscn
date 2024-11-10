@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://bonxnbvx3h8t2"]
+[gd_scene load_steps=7 format=4 uid="uid://brjuhlf1avonj"]
 
-[ext_resource type="TileSet" uid="uid://0iiaklhetwlj" path="res://Ressources/Tilesets/tileset.tres" id="1_ha6tx"]
-[ext_resource type="PackedScene" uid="uid://dm84msbhn4psu" path="res://scene/platformer_caribou.tscn" id="2_lytn4"]
-[ext_resource type="PackedScene" uid="uid://dt3cahmc63v34" path="res://scene/actionnables_transfo.tscn" id="3_cgik2"]
+[ext_resource type="TileSet" uid="uid://dlh5al2egrnie" path="res://Ressources/Tilesets/tileset.tres" id="1_ha6tx"]
+[ext_resource type="PackedScene" path="res://scene/platformer_caribou.tscn" id="2_lytn4"]
+[ext_resource type="PackedScene" path="res://scene/actionnables_transfo.tscn" id="3_cgik2"]
+[ext_resource type="PackedScene" uid="uid://djg1tqyvcujhb" path="res://scene/Spikes.tscn" id="4_fxl82"]
 
 [sub_resource type="Gradient" id="Gradient_44qg4"]
 offsets = PackedFloat32Array(0)
@@ -40,3 +41,9 @@ limit_bottom = 208
 position = Vector2(70, 78)
 collision_layer = 17
 collision_mask = 17
+
+[node name="Spikes" parent="." instance=ExtResource("4_fxl82")]
+position = Vector2(148, 84)
+
+[node name="Spikes2" parent="." instance=ExtResource("4_fxl82")]
+position = Vector2(156, 84)
