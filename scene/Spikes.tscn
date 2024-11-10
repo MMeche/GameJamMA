@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://djg1tqyvcujhb"]
+
+[ext_resource type="Texture2D" uid="uid://b0i8jioohx8gp" path="res://Ressources/Spikes.png" id="1_srfro"]
+[ext_resource type="Script" path="res://scene/spikes.gd" id="2_bk8md"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uv2ge"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_srfro")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_10e57"]
+size = Vector2(8, 5)
+
+[node name="Sprite2D" type="AnimatedSprite2D"]
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_uv2ge")
+autoplay = "default"
+frame_progress = 0.86738
+script = ExtResource("2_bk8md")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_10e57")
+debug_color = Color(0.842836, 0.324951, 0.519303, 0.42)
