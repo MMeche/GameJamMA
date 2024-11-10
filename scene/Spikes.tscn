@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://djg1tqyvcujhb"]
+[gd_scene load_steps=5 format=3 uid="uid://djg1tqyvcujhb"]
 
 [ext_resource type="Texture2D" uid="uid://owpsja4nxrdc" path="res://Ressources/Spikes.png" id="1_srfro"]
+[ext_resource type="Script" path="res://scene/spikes.gd" id="2_cbaeg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uv2ge"]
 animations = [{
@@ -21,6 +22,7 @@ position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_uv2ge")
 autoplay = "default"
 frame_progress = 0.86738
+script = ExtResource("2_cbaeg")
 
 [node name="Hitbox" type="Area2D" parent="."]
 
