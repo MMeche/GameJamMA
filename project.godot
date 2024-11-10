@@ -18,8 +18,9 @@ config/icon="res://icon.svg"
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-PlayerStats="*res://Global Variables/Player_Stats.gd"
 Museum="*res://Global Variables/museum.gd"
+PlayerStats="*res://Global Variables/Player_Stats.gd"
+DayNight="*res://Global Variables/day_night.gd"
 
 [display]
 
