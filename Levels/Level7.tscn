@@ -91,12 +91,12 @@ texture = SubResource("GradientTexture1D_dgi2b")
 metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(114, 66)
+position = Vector2(151, 96)
 zoom = Vector2(6, 6)
 limit_left = 0
 limit_top = 0
-limit_right = 392
-limit_bottom = 300
+limit_right = 312
+limit_bottom = 234
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(154, 30)
