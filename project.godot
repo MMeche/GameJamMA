@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+Museum="*res://Global Variables/museum.gd"
 PlayerStats="*res://Global Variables/Player_Stats.gd"
 
 [display]
@@ -71,7 +72,7 @@ SpinAttack={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/main.dialogue", "res://dialogue/evolve_caribou.dialogue", "res://dialogue/evolve_harfang.dialogue", "res://dialogue/evolve_renard.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/main.dialogue","res://dialogue/museum.dialogue", "res://dialogue/evolve_caribou.dialogue", "res://dialogue/evolve_harfang.dialogue", "res://dialogue/evolve_renard.dialogue")
 
 [layer_names]
 

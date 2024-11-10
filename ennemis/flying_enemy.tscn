@@ -56,7 +56,7 @@ script = ExtResource("1_jle66")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mbcfi")
 autoplay = "default"
-frame_progress = 0.155636
+frame_progress = 0.814655
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_58pjb")
