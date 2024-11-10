@@ -1,15 +1,18 @@
-[gd_scene load_steps=31 format=3 uid="uid://nqk78c318shk"]
+[gd_scene load_steps=37 format=3 uid="uid://nqk78c318shk"]
 
 [ext_resource type="Script" path="res://src/platform_player.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://ddjsc5l3hsrsk" path="res://sprites/fposter,small,wall_texture,square_product,600x600.jpg" id="2_5anam"]
 [ext_resource type="Script" path="res://src/player_animation_tree.gd" id="3_y516s"]
+[ext_resource type="Texture2D" uid="uid://dm1perfcxxyp" path="res://sprites/Caribou_Idle.png" id="4_a4qx2"]
 [ext_resource type="Texture2D" uid="uid://yj8ud4sdcyuf" path="res://sprites/Hero.png" id="4_xxpte"]
+[ext_resource type="Texture2D" uid="uid://dt3rdcuwhooxu" path="res://sprites/Caribou_Run.png" id="5_ic2c8"]
+[ext_resource type="Texture2D" uid="uid://crdkvahrqshlk" path="res://sprites/Harfang_Fly.png" id="6_esotc"]
 
-[sub_resource type="RectangleShape2D" id="1"]
-size = Vector2(6, 8)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7r1jt"]
+size = Vector2(11, 16)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_xitqh"]
-radius = 5.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_hn74r"]
+radius = 7.0
 
 [sub_resource type="Animation" id="Animation_cji22"]
 resource_name = "Player_Airborn"
@@ -38,6 +41,30 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [Rect2(7, 32, 8, 8), Rect2(7, 8, 8, 8), Rect2(7, 32, 8, 8)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.51, 0.51)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Direction/ActionableFinder/CollisionShape2D:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
 }
 
 [sub_resource type="Animation" id="Animation_wya6d"]
@@ -167,6 +194,189 @@ tracks/1/keys = {
 "update": 0,
 "values": [Rect2(7.038, 7.98, 8, 8)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:shape")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("RectangleShape2D_7r1jt")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Direction/ActionableFinder/CollisionShape2D:shape")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CircleShape2D_hn74r")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CollisionShape2D:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_eu1sq"]
+resource_name = "caribou_iddle"
+length = 0.6
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_a4qx2")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(1, 1, 16, 16), Rect2(1, 17, 17, 16), Rect2(1, 33, 17, 16), Rect2(1, 49, 17, 16)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:shape")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("RectangleShape2D_7r1jt")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Direction/ActionableFinder/CollisionShape2D:shape")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CircleShape2D_hn74r")]
+}
+
+[sub_resource type="Animation" id="Animation_oqmpr"]
+resource_name = "caribou_run"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_ic2c8")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Rect2(1, 31, 26, 15), Rect2(1, 2, 26, 14), Rect2(1, 17, 26, 14)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:shape")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("RectangleShape2D_7r1jt")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Direction/ActionableFinder/CollisionShape2D:shape")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CircleShape2D_hn74r")]
+}
+
+[sub_resource type="Animation" id="Animation_schc7"]
+resource_name = "harfang_fly"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_esotc")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.466667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Rect2(1, 51, 17, 15), Rect2(1, 30, 17, 9), Rect2(1, 1, 16, 16)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.466667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(1, 1), Vector2(1, 0.57), Vector2(1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u1o3d"]
 _data = {
@@ -175,7 +385,10 @@ _data = {
 "Player_Iddle": SubResource("Animation_1wcw7"),
 "Player_Jump": SubResource("Animation_sk4e6"),
 "Player_Run": SubResource("Animation_jjy6r"),
-"RESET": SubResource("Animation_a2ahn")
+"RESET": SubResource("Animation_a2ahn"),
+"caribou_iddle": SubResource("Animation_eu1sq"),
+"caribou_run": SubResource("Animation_oqmpr"),
+"harfang_fly": SubResource("Animation_schc7")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e3wch"]
@@ -263,8 +476,7 @@ collision_mask = 13
 script = ExtResource("1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1.035, 1.035)
-shape = SubResource("1")
+shape = SubResource("RectangleShape2D_7r1jt")
 
 [node name="Direction" type="Marker2D" parent="."]
 
@@ -273,7 +485,7 @@ collision_layer = 0
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/ActionableFinder"]
-shape = SubResource("CircleShape2D_xitqh")
+shape = SubResource("CircleShape2D_hn74r")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(2.23517e-07, 0)
