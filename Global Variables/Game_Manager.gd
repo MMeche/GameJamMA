@@ -1,3 +1,3 @@
 extends Node
 
-var is_day: bool
+var is_day: bool = true

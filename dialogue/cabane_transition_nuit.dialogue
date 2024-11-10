@@ -3,7 +3,7 @@ Cabane à sucre: Bienvenue dans la cabane !
 	Au menu du jour : [[Sirop d'érable |Pancake |Bacon | Soupe aux pois| Oreille de Crisse]]
 	Souhaites-tu une part pour ton souper ?
 - Avec plaisir
-#	TODO passer au mode nuit
+	set GameManager.is_day = false
 - Pas pour l'instant, merci
 	Cabane à sucre: C'est correct, reviens nous voir quand tu auras faim
 => END
