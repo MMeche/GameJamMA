@@ -1,0 +1,81 @@
+[gd_scene load_steps=11 format=3 uid="uid://bdc5yuagcdl8y"]
+
+[ext_resource type="Script" path="res://Scripts/flying_enemy.gd" id="1_jle66"]
+[ext_resource type="Texture2D" uid="uid://dbk20e8ghnx8s" path="res://Ressources/Tilesets/Base/Enemies.png" id="1_rixdd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dofo3"]
+atlas = ExtResource("1_rixdd")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_huo3s"]
+atlas = ExtResource("1_rixdd")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vox4"]
+atlas = ExtResource("1_rixdd")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eo87l"]
+atlas = ExtResource("1_rixdd")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mbcfi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dofo3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_huo3s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vox4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eo87l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_58pjb"]
+radius = 3.0
+height = 10.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yuad3"]
+radius = 48.0416
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yjai1"]
+radius = 3.0
+height = 10.0
+
+[node name="FlyinEnemy" type="CharacterBody2D"]
+script = ExtResource("1_jle66")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mbcfi")
+autoplay = "default"
+frame_progress = 0.155636
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_58pjb")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="DetectionZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionZone"]
+shape = SubResource("CircleShape2D_yuad3")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CapsuleShape2D_yjai1")
+debug_color = Color(0.996018, 0, 0.194727, 0.42)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="DetectionZone" to="." method="_on_detection_zone_body_entered"]
+[connection signal="body_shape_exited" from="DetectionZone" to="." method="_on_detection_zone_body_shape_exited"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

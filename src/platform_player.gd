@@ -4,9 +4,13 @@ extends CharacterBody2D
 
 var speed_base = 55.0
 var speed_spin = 110.0
-
 var speed
 var jump_speed = -130.0
+
+var healt_amount = PlayerStats.player_health
+var damage_amount = PlayerStats.player_damage
+var available_forms = PlayerStats.player_forms
+var money_amount = PlayerStats.player_money
 
 var caribou = false
 var harfang = false
@@ -96,7 +100,7 @@ func _process(delta: float) -> void:
 		else:
 			$InterractableToggle.visible = false
 
-func _on_caribou_evolving () -> void :
+			func _on_caribou_evolving () -> void :
 	caribou = true
 
 func _on_harfang_evolving () -> void :
@@ -104,3 +108,21 @@ func _on_harfang_evolving () -> void :
 
 func _on_renard_evolving () -> void :
 	renard = true
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	if area.name == "Hitbox":
+		if area.get_parent().has_method("_get_damage_amount"):
+			var node = area.get_parent() as Node
+			healt_amount -= node.damage_amount
+			print("Health amount = ", healt_amount)
+		
+		if area.get_parent().has_method("_get_money_value"):
+			var node = area.get_parent() as Node
+			money_amount += node.money_value
+			PlayerStats.player_money = money_amount;
+			area.get_parent().queue_free()
+			print("Money amount = ", money_amount)
+			
+	if healt_amount <= 0:
+		get_tree().change_scene_to_file("res://scene/Gameover.tscn")
+		

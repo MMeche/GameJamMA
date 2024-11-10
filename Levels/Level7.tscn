@@ -113,4 +113,4 @@ tile_set = ExtResource("1_uq4ds")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(136, 79)
 sprite_frames = SubResource("SpriteFrames_2tvl0")
-frame_progress = 0.784006
+frame_progress = 0.50726

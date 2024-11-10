@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1qnr7iky2k6f"]
+[gd_scene load_steps=9 format=3 uid="uid://c1qnr7iky2k6f"]
 
 [ext_resource type="PackedScene" uid="uid://kh3tipci0ma8" path="res://scene/platform_npc.tscn" id="2_tiyu4"]
 [ext_resource type="PackedScene" uid="uid://ccua2erxjoryb" path="res://scene/actionable.tscn" id="2_yqx0l"]
 [ext_resource type="Resource" uid="uid://n1wmxpmqkak3" path="res://dialogue/main.dialogue" id="3_jme3k"]
 [ext_resource type="PackedScene" uid="uid://pllpwxl2lnwy" path="res://ennemis/enemy.tscn" id="4_k7m5c"]
 [ext_resource type="PackedScene" uid="uid://nqk78c318shk" path="res://scene/platform_player.tscn" id="4_osd4l"]
+[ext_resource type="PackedScene" uid="uid://40cxodljruog" path="res://scene/Coins.tscn" id="6_dkktx"]
+[ext_resource type="PackedScene" uid="uid://bdc5yuagcdl8y" path="res://ennemis/flying_enemy.tscn" id="7_fhsaf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sha44"]
 radius = 15.0333
@@ -43,9 +45,23 @@ dialogue_ressource = ExtResource("3_jme3k")
 shape = SubResource("CircleShape2D_sha44")
 
 [node name="Enemy" parent="." instance=ExtResource("4_k7m5c")]
+visible = false
+position = Vector2(425, 422)
+
+[node name="PlatformPlayer" parent="." instance=ExtResource("4_osd4l")]
+position = Vector2(425, 422)
+
+[node name="Coin" parent="." instance=ExtResource("6_dkktx")]
+position = Vector2(525, 372)
+
+[node name="Coin2" parent="." instance=ExtResource("6_dkktx")]
+position = Vector2(153, 438)
+
+[node name="Coin3" parent="." instance=ExtResource("6_dkktx")]
+position = Vector2(332, 383)
+
+[node name="FlyinEnemy" parent="." instance=ExtResource("7_fhsaf")]
+position = Vector2(281, 374)
 position = Vector2(348, 396)
 collision_layer = 2
 collision_mask = 13
-
-[node name="PlatformPlayer" parent="." instance=ExtResource("4_osd4l")]
-position = Vector2(381, 437)
