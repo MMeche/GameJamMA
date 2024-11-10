@@ -523,4 +523,5 @@ debug_color = Color(0.781559, 0.363472, 0.627825, 0.42)
 [connection signal="is_iddling" from="." to="AnimationTree" method="_on_platform_player_is_iddling"]
 [connection signal="is_jumping" from="." to="AnimationTree" method="_on_platform_player_is_jumping"]
 [connection signal="is_running" from="." to="AnimationTree" method="_on_platform_player_is_running"]
+[connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
