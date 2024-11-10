@@ -2,11 +2,15 @@ extends CharacterBody2D
 
 var speed = 25
 var player_chase = false
-var player = null
+var player
+
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta: float) -> void:
 	if player_chase:
-		position += (player.position - position) / speed
+		velocity = Vector2(player.position.x - position.x, 0).normalized() * speed
+	velocity.y += gravity * delta * speed
+	move_and_slide()
 
 func _on_detection_arena_body_entered(body: Node2D) -> void:
 	player = body
@@ -14,3 +18,4 @@ func _on_detection_arena_body_entered(body: Node2D) -> void:
 
 func _on_detection_arena_body_exited(body: Node2D) -> void:
 	player_chase = false
+	velocity = Vector2(0, 0)
