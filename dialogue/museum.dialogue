@@ -1,0 +1,46 @@
+~ start
+Musée: Bienvenue au Musée d'Art de la ville
+if Status.invest_made:
+	Musée: Oh! C'est toi!
+		Depuis ta dernière visite, tu as obtenu {{Status.invest()}} pièces
+else:
+	Musée: Ici vous pouvez soutenir un ou une artiste
+		Et plus tard récolter le fruit de votre investissement
+Musée : L'artiste du jour est [[Froggy |Doggo |Kitten |Sheepy |Bunny]]
+
+~ choices
+Musée: Vous avez investi {{Status.museum_money + Status.money_given}} pièces
+	Que souhtaites-tu faire ?
+- Soutenir l'artiste du jour
+	Musée: Quelle bonté de votre part !
+		Combien investis-tu ?
+	set Status.invest_mode = true
+	set Status.invest_made = true
+	=>< money_selection
+#	TODO soustraire sous au joueur
+	=> choices
+- Récolter les fonds [if Status.museum_money > 0]
+	Musée: Combien souhaites-tu récupérer ?
+	set Status.invest_mode = false
+	=>< money_selection
+#	TODO ajout sous joueur
+	=> choices
+- Partir
+	Musée: Au revoir, à bientôt
+	=> END
+	
+~ money_selection
+- 1
+	set Status.flag_error = Status.update(1)
+- 5
+	set Status.flag_error = Status.update(5)
+- 10
+	set Status.flag_error = Status.update(10)
+- retour
+	=> END
+if Status.flag_error:
+	Musée: Nous sommes désolé, il semblerait qu'il ne soit pas possible d'effectuer cette transaction ...
+else:
+	Musée: Transaction réussie
+set Status.museum_money = Status.museum_money
+=> END

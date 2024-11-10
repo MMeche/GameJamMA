@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://kh3tipci0ma8" path="res://scene/platform_npc.tscn" id="2_tiyu4"]
 [ext_resource type="PackedScene" uid="uid://ccua2erxjoryb" path="res://scene/actionable.tscn" id="2_yqx0l"]
-[ext_resource type="Resource" uid="uid://n1wmxpmqkak3" path="res://dialogue/main.dialogue" id="3_jme3k"]
+[ext_resource type="Resource" uid="uid://bfo3yyhg1gals" path="res://dialogue/museum.dialogue" id="3_dhtet"]
 [ext_resource type="PackedScene" uid="uid://pllpwxl2lnwy" path="res://ennemis/enemy.tscn" id="4_k7m5c"]
 [ext_resource type="PackedScene" uid="uid://nqk78c318shk" path="res://scene/platform_player.tscn" id="4_osd4l"]
 
@@ -37,7 +37,7 @@ polygon = PackedVector2Array(-328.645, 96.0878, -341.217, 83.0776, -114.513, 86.
 position = Vector2(215, 387)
 
 [node name="Actionable" parent="PlatformNPC" instance=ExtResource("2_yqx0l")]
-dialogue_ressource = ExtResource("3_jme3k")
+dialogue_ressource = ExtResource("3_dhtet")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformNPC/Actionable"]
 shape = SubResource("CircleShape2D_sha44")
