@@ -45,11 +45,10 @@ dialogue_ressource = ExtResource("3_dhtet")
 shape = SubResource("CircleShape2D_sha44")
 
 [node name="Enemy" parent="." instance=ExtResource("4_k7m5c")]
-visible = false
 position = Vector2(425, 422)
 
 [node name="PlatformPlayer" parent="." instance=ExtResource("4_osd4l")]
-position = Vector2(425, 422)
+position = Vector2(506, 373)
 
 [node name="Coin" parent="." instance=ExtResource("6_dkktx")]
 position = Vector2(525, 372)
