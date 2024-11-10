@@ -16,6 +16,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if state_machine.get_current_node() == "Player_Airborn" :
 		set("parameters/conditions/jump",false)
+	if state_machine.get_current_node() == "Player_Jump" :
+		set("parameters/conditions/jump",false)
 	if state_machine.get_current_node() == "Player_Run":
 		set("parameters/conditions/bumped",false)
 	if state_machine.get_current_node() == "harfang_te_nique_ta_mere":

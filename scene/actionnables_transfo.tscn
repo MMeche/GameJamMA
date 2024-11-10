@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dt3cahmc63v34"]
+
+[ext_resource type="Script" path="res://actionnables_transfo.gd" id="1_syn1l"]
+[ext_resource type="Texture2D" uid="uid://bkmubjyrw0aq6" path="res://sprites/1.jpg" id="2_jsxtn"]
+[ext_resource type="Resource" uid="uid://bqmaw7kquc6w1" path="res://dialogue/evolve_caribou.dialogue" id="2_tm01o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lkkj1"]
+size = Vector2(29, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lcbxq"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jsxtn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Actionnables_Transfo" type="Area2D"]
+script = ExtResource("1_syn1l")
+dialogue_ressource = ExtResource("2_tm01o")
+evolve = "caribou"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_lkkj1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.035, 0.035)
+sprite_frames = SubResource("SpriteFrames_lcbxq")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://bonxnbvx3h8t2"]
+[gd_scene load_steps=6 format=4 uid="uid://bonxnbvx3h8t2"]
 
 [ext_resource type="TileSet" uid="uid://0iiaklhetwlj" path="res://Ressources/Tilesets/tileset.tres" id="1_ha6tx"]
 [ext_resource type="PackedScene" uid="uid://dm84msbhn4psu" path="res://scene/platformer_caribou.tscn" id="2_lytn4"]
+[ext_resource type="PackedScene" uid="uid://dt3cahmc63v34" path="res://scene/actionnables_transfo.tscn" id="3_cgik2"]
 
 [sub_resource type="Gradient" id="Gradient_44qg4"]
 offsets = PackedFloat32Array(0)
@@ -23,7 +24,9 @@ tile_set = ExtResource("1_ha6tx")
 collision_visibility_mode = 1
 
 [node name="PlatformerCaribou" parent="." instance=ExtResource("2_lytn4")]
-position = Vector2(24, 89)
+position = Vector2(56, 79)
+collision_layer = 17
+collision_mask = 17
 
 [node name="Camera2D2" type="Camera2D" parent="PlatformerCaribou"]
 position = Vector2(75, -33)
@@ -32,3 +35,8 @@ limit_left = 0
 limit_top = 0
 limit_right = 272
 limit_bottom = 208
+
+[node name="Actionnables_Transfo" parent="." instance=ExtResource("3_cgik2")]
+position = Vector2(70, 78)
+collision_layer = 17
+collision_mask = 17
