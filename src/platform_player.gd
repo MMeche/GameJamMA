@@ -2,17 +2,18 @@ extends CharacterBody2D
 
 @onready var actionable_finder: Area2D = $Direction/ActionableFinder
 
-var speed = 300.0
-var jump_speed = -400.0
 var healt_amount = PlayerStats.player_health
 var damage_amount = PlayerStats.player_damage
 var available_forms = PlayerStats.player_forms
 var money_amount = PlayerStats.player_money
+var speed = 55.0
+var jump_speed = -175.0
 
 signal is_running(x:float)
 signal is_jumping
 signal is_airborn
 signal is_grounded
+signal is_iddling
 
 # Get the gravity from the project settings so you can sync with rigid body nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -30,8 +31,25 @@ func _physics_process(delta):
 	var direction_left = Input.is_action_pressed("move_left")
 	var direction_right = Input.is_action_pressed("move_right")
 	velocity.x = (int(direction_left)*-1 +int(direction_right)*1) * speed
-
+	
+	# emit signals for the animation node tree
+	if abs(velocity.x) > 0 && is_on_floor():
+		is_running.emit(velocity.x)
+	if !is_on_floor():
+		is_airborn.emit()
+	else :
+		is_grounded.emit()
+	if velocity.x == 0 && is_on_floor():
+		is_iddling.emit()
+	
+	#manage the Flip of the sprite
+	if velocity.x < 0 :
+		$Sprite2D.flip_h = true
+	if velocity.x > 0 :
+		$Sprite2D.flip_h = false
+	
 	move_and_slide()
+	
 
 func _process(delta: float) -> void:
 		# Detection interaction
@@ -65,3 +83,4 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		get_tree().change_scene_to_file("res://scene/Gameover.tscn")
 		
 			
+		
