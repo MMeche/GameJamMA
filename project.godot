@@ -72,7 +72,7 @@ SpinAttack={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/main.dialogue", "res://dialogue/museum.dialogue", "res://dialogue/evolve_renard.dialogue", "<null>")
+locale/translations_pot_files=PackedStringArray("res://dialogue/museum.dialogue", "res://dialogue/evolve_renard.dialogue", "<null>", "res://dialogue/vieil_erable.dialogue", "res://dialogue/evolve_caribou.dialogue", "res://dialogue/evolve_harfang.dialogue")
 
 [layer_names]
 

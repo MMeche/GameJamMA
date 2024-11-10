@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://djc3xunpdlu2k" path="res://Ressources/village.png" id="1_7jhwc"]
 [ext_resource type="TileSet" uid="uid://0iiaklhetwlj" path="res://Ressources/Tilesets/tileset.tres" id="1_gfgj6"]
-[ext_resource type="PackedScene" uid="uid://dnjgmru86had1" path="res://scene/platformer_caribou.tscn" id="3_ps6l1"]
+[ext_resource type="PackedScene" uid="uid://dm84msbhn4psu" path="res://scene/platformer_caribou.tscn" id="3_ps6l1"]
 [ext_resource type="PackedScene" uid="uid://ccua2erxjoryb" path="res://scene/actionable.tscn" id="4_11f4q"]
 [ext_resource type="Resource" uid="uid://bfo3yyhg1gals" path="res://dialogue/museum.dialogue" id="5_ts50g"]
-[ext_resource type="PackedScene" uid="uid://kh3tipci0ma8" path="res://scene/platform_npc.tscn" id="6_ys5ja"]
+[ext_resource type="Resource" uid="uid://crqfduxavhdk7" path="res://dialogue/vieil_erable.dialogue" id="6_7hwti"]
 
 [sub_resource type="Gradient" id="Gradient_44qg4"]
 offsets = PackedFloat32Array(0)
@@ -15,7 +15,7 @@ colors = PackedColorArray(0.0509804, 0.0509804, 0.0509804, 1)
 gradient = SubResource("Gradient_44qg4")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2bude"]
-size = Vector2(8, 8)
+size = Vector2(31, 59)
 
 [node name="Level1" type="Node2D"]
 
@@ -58,15 +58,19 @@ limit_top = 0
 limit_right = 1000
 limit_bottom = 208
 
-[node name="Actionable" parent="." instance=ExtResource("4_11f4q")]
+[node name="Museum" parent="." instance=ExtResource("4_11f4q")]
 position = Vector2(380, 116)
 dialogue_ressource = ExtResource("5_ts50g")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Museum"]
 shape = SubResource("RectangleShape2D_2bude")
 
-[node name="PlatformNPC" parent="." instance=ExtResource("6_ys5ja")]
-visible = false
-position = Vector2(384, 108)
+[node name="Erable" parent="." instance=ExtResource("4_11f4q")]
+position = Vector2(96, 96)
+dialogue_ressource = ExtResource("6_7hwti")
 metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Erable"]
+position = Vector2(-0.5, -17.5)
+shape = SubResource("RectangleShape2D_2bude")
