@@ -4,6 +4,7 @@ extends CharacterBody2D
 
 var speed = 300.0
 var jump_speed = -400.0
+var healt_amount = 20
 
 signal is_running(x:float)
 signal is_jumping
@@ -41,3 +42,16 @@ func _process(delta: float) -> void:
 			is_airborn.emit()
 		else :
 			is_grounded.emit()
+
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	if area.name == "Hitbox":
+		if area.get_parent().has_method("_get_damage_amount"):
+			var node = area.get_parent() as Node
+			healt_amount -= node.damage_amount
+			print("Health amount = ", healt_amount)
+			
+	if healt_amount <= 0:
+		get_tree().change_scene_to_file("res://scene/Gameover.tscn")
+		
+			
