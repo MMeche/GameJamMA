@@ -34,7 +34,7 @@ polygon = PackedVector2Array(-330.327, 94.9664, -340.98, 82.6316, -113.906, 86.5
 polygon = PackedVector2Array(-328.645, 96.0878, -341.217, 83.0776, -114.513, 86.9529, -126.802, 97.2092)
 
 [node name="PlatformNPC" parent="." instance=ExtResource("2_tiyu4")]
-position = Vector2(215, 387)
+position = Vector2(202, 438)
 
 [node name="Actionable" parent="PlatformNPC" instance=ExtResource("2_yqx0l")]
 dialogue_ressource = ExtResource("3_dhtet")

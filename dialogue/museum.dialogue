@@ -2,14 +2,14 @@
 Musée: Bienvenue au Musée d'Art de la ville
 if Status.invest_made:
 	Musée: Oh! C'est toi!
-		Depuis ta dernière visite, tu as obtenu {{Status.invest()}} pièces
+		Depuis ta dernière visite, tu as gagné {{Status.invest()}} pièces
 else:
 	Musée: Ici vous pouvez soutenir un ou une artiste
 		Et plus tard récolter le fruit de votre investissement
 Musée : L'artiste du jour est [[Froggy |Doggo |Kitten |Sheepy |Bunny]]
 
 ~ choices
-Musée: Vous avez investi {{Status.museum_money + Status.money_given}} pièces
+Musée: Nous avons {{Status.museum_money + Status.money_given}} pièces à ton nom
 	Que souhtaites-tu faire ?
 - Soutenir l'artiste du jour
 	Musée: Quelle bonté de votre part !
