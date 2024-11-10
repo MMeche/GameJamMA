@@ -97,16 +97,24 @@ func _process(delta: float) -> void:
 			$InterractableToggle.visible = true
 			if Input.is_action_just_pressed("Actionable"):
 				actionables[0].action()
+				if(actionables[0].has_method("_get_evolve")):
+					match actionables[0]._get_evolve():
+						"caribou":
+							_on_caribou_evolving()
+						"harfang":
+							_on_harfang_evolving()
+						"renard":
+							_on_renard_evolving()
 		else:
 			$InterractableToggle.visible = false
 
-			func _on_caribou_evolving () -> void :
+func _on_caribou_evolving() -> void :
 	caribou = true
 
-func _on_harfang_evolving () -> void :
+func _on_harfang_evolving() -> void :
 	harfang = true
 
-func _on_renard_evolving () -> void :
+func _on_renard_evolving() -> void :
 	renard = true
 
 func _on_hitbox_area_entered(area: Area2D) -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://nqk78c318shk"]
+[gd_scene load_steps=38 format=3 uid="uid://nqk78c318shk"]
 
 [ext_resource type="Script" path="res://src/platform_player.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://ddjsc5l3hsrsk" path="res://sprites/fposter,small,wall_texture,square_product,600x600.jpg" id="2_5anam"]
@@ -530,9 +530,9 @@ script = ExtResource("3_y516s")
 shape = SubResource("RectangleShape2D_mew47")
 debug_color = Color(0.781559, 0.363472, 0.627825, 0.42)
 
-[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="is_airborn" from="." to="AnimationTree" method="_on_platform_player_is_airborn"]
 [connection signal="is_grounded" from="." to="AnimationTree" method="_on_platform_player_is_grounded"]
 [connection signal="is_iddling" from="." to="AnimationTree" method="_on_platform_player_is_iddling"]
 [connection signal="is_jumping" from="." to="AnimationTree" method="_on_platform_player_is_jumping"]
 [connection signal="is_running" from="." to="AnimationTree" method="_on_platform_player_is_running"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

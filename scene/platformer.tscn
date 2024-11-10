@@ -5,8 +5,8 @@
 [ext_resource type="Resource" uid="uid://n1wmxpmqkak3" path="res://dialogue/main.dialogue" id="3_jme3k"]
 [ext_resource type="PackedScene" uid="uid://pllpwxl2lnwy" path="res://ennemis/enemy.tscn" id="4_k7m5c"]
 [ext_resource type="PackedScene" uid="uid://nqk78c318shk" path="res://scene/platform_player.tscn" id="4_osd4l"]
-[ext_resource type="PackedScene" uid="uid://40cxodljruog" path="res://scene/Coins.tscn" id="6_dkktx"]
-[ext_resource type="PackedScene" uid="uid://bdc5yuagcdl8y" path="res://ennemis/flying_enemy.tscn" id="7_fhsaf"]
+[ext_resource type="PackedScene" path="res://scene/Coins.tscn" id="6_dkktx"]
+[ext_resource type="PackedScene" path="res://ennemis/flying_enemy.tscn" id="7_fhsaf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sha44"]
 radius = 15.0333
@@ -61,7 +61,6 @@ position = Vector2(153, 438)
 position = Vector2(332, 383)
 
 [node name="FlyinEnemy" parent="." instance=ExtResource("7_fhsaf")]
-position = Vector2(281, 374)
 position = Vector2(348, 396)
 collision_layer = 2
 collision_mask = 13
