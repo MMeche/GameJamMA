@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dt3cahmc63v34"]
 
-[ext_resource type="Script" path="res://actionnables_transfo.gd" id="1_syn1l"]
+[ext_resource type="Script" path="res://src/actionnables_transfo.gd" id="1_syn1l"]
 [ext_resource type="Texture2D" uid="uid://bkmubjyrw0aq6" path="res://sprites/1.jpg" id="2_jsxtn"]
 [ext_resource type="Resource" uid="uid://bqmaw7kquc6w1" path="res://dialogue/evolve_caribou.dialogue" id="2_tm01o"]
 

@@ -98,9 +98,9 @@ func _process(delta: float) -> void:
 
 func _on_caribou_evolving () -> void :
 	caribou = true
-	
+
 func _on_harfang_evolving () -> void :
-	harfang = true	
+	harfang = true
 
 func _on_renard_evolving () -> void :
 	renard = true
