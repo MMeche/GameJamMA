@@ -10,6 +10,8 @@ signal is_jumping
 signal is_airborn
 signal is_grounded
 signal is_iddling
+signal bumped
+signal is_charging
 
 # Get the gravity from the project settings so you can sync with rigid body nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -19,14 +21,18 @@ func _physics_process(delta):
 	velocity.y += gravity * delta
 
 	# Handle Jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor() and !$AnimationTree.get("parameters/conditions/caribou"):
 		velocity.y = jump_speed
 		is_jumping.emit()
 
 	# Get the input direction.
 	var direction_left = Input.is_action_pressed("move_left")
 	var direction_right = Input.is_action_pressed("move_right")
+	if Input.is_action_pressed("Charge") && (direction_left||direction_right != false):
+		is_charging.emit()
+		
 	velocity.x = (int(direction_left)*-1 +int(direction_right)*1) * speed
+	move_and_slide()
 	
 	# emit signals for the animation node tree
 	if abs(velocity.x) > 0 && is_on_floor():
@@ -37,6 +43,9 @@ func _physics_process(delta):
 		is_grounded.emit()
 	if velocity.x == 0 && is_on_floor():
 		is_iddling.emit()
+	if is_on_wall() :
+		bumped.emit()
+		
 	
 	#manage the Flip of the sprite
 	if velocity.x < 0 :
@@ -44,7 +53,7 @@ func _physics_process(delta):
 	if velocity.x > 0 :
 		$Sprite2D.flip_h = false
 	
-	move_and_slide()
+	
 	
 
 func _process(delta: float) -> void:
