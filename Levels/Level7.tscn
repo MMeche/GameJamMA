@@ -1,10 +1,10 @@
-[gd_scene load_steps=18 format=4 uid="uid://g37c4hf7k7b4"]
+[gd_scene load_steps=18 format=4 uid="uid://sxx5dsbw7u7u"]
 
-[ext_resource type="TileSet" uid="uid://dlh5al2egrnie" path="res://Ressources/Tilesets/tileset.tres" id="1_uq4ds"]
+[ext_resource type="TileSet" uid="uid://0iiaklhetwlj" path="res://Ressources/Tilesets/tileset.tres" id="1_uq4ds"]
 [ext_resource type="Texture2D" uid="uid://d31ew1v7fw02l" path="res://Ressources/aurora.png" id="2_iaxpb"]
 [ext_resource type="Texture2D" uid="uid://c4bdcteqj8s6v" path="res://Ressources/north_star.png" id="3_g7tot"]
-[ext_resource type="PackedScene" uid="uid://dmuyrobm65c0l" path="res://scene/ui_coin_life.tscn" id="4_54ftx"]
-[ext_resource type="PackedScene" uid="uid://c3bn8thwt3fos" path="res://scene/ui_night_timer.tscn" id="7_8m6h1"]
+[ext_resource type="PackedScene" path="res://scene/ui_coin_life.tscn" id="4_54ftx"]
+[ext_resource type="PackedScene" path="res://scene/ui_night_timer.tscn" id="7_8m6h1"]
 
 [sub_resource type="Gradient" id="Gradient_44qg4"]
 offsets = PackedFloat32Array(0)
