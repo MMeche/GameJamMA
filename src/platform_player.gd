@@ -2,6 +2,10 @@ extends CharacterBody2D
 
 @onready var actionable_finder: Area2D = $Direction/ActionableFinder
 
+var healt_amount = PlayerStats.player_health
+var damage_amount = PlayerStats.player_damage
+var available_forms = PlayerStats.player_forms
+var money_amount = PlayerStats.player_money
 var speed = 55.0
 var jump_speed = -175.0
 
@@ -53,4 +57,30 @@ func _process(delta: float) -> void:
 		if actionables.size() > 0 and Input.is_action_just_pressed("Actionable"):
 			# TODO afficher le bouton entrer sur l'écran ?
 			actionables[0].action()
+		if abs(velocity.x) > 0 && is_on_floor():
+			is_running.emit(velocity.x)
+		if !is_on_floor():
+			is_airborn.emit()
+		else :
+			is_grounded.emit()
+
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	if area.name == "Hitbox":
+		if area.get_parent().has_method("_get_damage_amount"):
+			var node = area.get_parent() as Node
+			healt_amount -= node.damage_amount
+			print("Health amount = ", healt_amount)
+		
+		if area.get_parent().has_method("_get_money_value"):
+			var node = area.get_parent() as Node
+			money_amount += node.money_value
+			PlayerStats.player_money = money_amount;
+			area.get_parent().queue_free()
+			print("Money amount = ", money_amount)
+			
+	if healt_amount <= 0:
+		get_tree().change_scene_to_file("res://scene/Gameover.tscn")
+		
+			
 		

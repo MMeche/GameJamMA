@@ -470,6 +470,9 @@ states/Start/position = Vector2(123, 99)
 transitions = ["Start", "Player_Iddle", SubResource("AnimationNodeStateMachineTransition_pyu51"), "Player_Iddle", "Player_Jump", SubResource("AnimationNodeStateMachineTransition_y2gdy"), "Player_Jump", "Player_Airborn", SubResource("AnimationNodeStateMachineTransition_n68cl"), "Player_Airborn", "Player_Iddle", SubResource("AnimationNodeStateMachineTransition_0b27r"), "Player_Iddle", "Player_Run", SubResource("AnimationNodeStateMachineTransition_4evwo"), "Player_Run", "Player_Iddle", SubResource("AnimationNodeStateMachineTransition_5riim"), "Player_Run", "Player_Jump", SubResource("AnimationNodeStateMachineTransition_lxe7e"), "Player_Dead", "End", SubResource("AnimationNodeStateMachineTransition_tktgu"), "Player_Iddle", "Player_Airborn", SubResource("AnimationNodeStateMachineTransition_bm60l"), "Player_Jump", "Player_Iddle", SubResource("AnimationNodeStateMachineTransition_u3uq7"), "Player_Run", "Player_Airborn", SubResource("AnimationNodeStateMachineTransition_dvs2w")]
 graph_offset = Vector2(-170, 134)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mew47"]
+size = Vector2(16, 24)
+
 [node name="PlatformPlayer" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 13
@@ -509,6 +512,13 @@ parameters/conditions/jump = false
 parameters/conditions/running = false
 script = ExtResource("3_y516s")
 
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_mew47")
+debug_color = Color(0.781559, 0.363472, 0.627825, 0.42)
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="is_airborn" from="." to="AnimationTree" method="_on_platform_player_is_airborn"]
 [connection signal="is_grounded" from="." to="AnimationTree" method="_on_platform_player_is_grounded"]
 [connection signal="is_iddling" from="." to="AnimationTree" method="_on_platform_player_is_iddling"]
