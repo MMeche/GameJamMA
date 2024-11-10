@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scene/ui_night_timer.gd" id="2_ugcye"]
 [ext_resource type="Texture2D" uid="uid://qsptlfkw7ojc" path="res://Ressources/moon.png" id="4_na17l"]
 
-[node name="Ui" type="Control" node_paths=PackedStringArray("timer_text")]
+[node name="UiNightTimer" type="Control" node_paths=PackedStringArray("timer_text")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
