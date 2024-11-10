@@ -1,0 +1,10 @@
+~ start
+Eglise : Bienvenue mon enfant
+	Souhaites-tu faire un don de 5 pièces pour montrer ta foi envers la nymphe du sirop d'érable ?
+- Que la nymphe me bénisse [if PlayerStats.player_money >= 5]
+	set PlayerStats.player_money -= 5
+	set PlayerStats.health_max += 10
+	Vous sentez votre force vitale augmenter
+- Je préfère faire une prière...
+Eglise : Que la nymphe soit avec toi
+=> END
