@@ -91,22 +91,22 @@ func _physics_process(delta):
 		$Sprite2D.flip_h = false
 
 func _process(delta: float) -> void:
-		# Detection interaction
-		var actionables = actionable_finder.get_overlapping_areas()
-		if actionables.size() > 0 :
-			$InterractableToggle.visible = true
-			if Input.is_action_just_pressed("Actionable"):
-				actionables[0].action()
-				if(actionables[0].has_method("_get_evolve")):
-					match actionables[0]._get_evolve():
-						"caribou":
-							_on_caribou_evolving()
-						"harfang":
-							_on_harfang_evolving()
-						"renard":
-							_on_renard_evolving()
-		else:
-			$InterractableToggle.visible = false
+	# Detection interaction
+	var actionables = actionable_finder.get_overlapping_areas()
+	if actionables.size() > 0 :
+		$InterractableToggle.visible = true
+		if Input.is_action_just_pressed("Actionable"):
+			actionables[0].action()
+			if(actionables[0].has_method("_get_evolve")):
+				match actionables[0]._get_evolve():
+					"caribou":
+						_on_caribou_evolving()
+					"harfang":
+						_on_harfang_evolving()
+					"renard":
+						_on_renard_evolving()
+	else:
+		$InterractableToggle.visible = false
 
 func _on_caribou_evolving() -> void :
 	caribou = true
@@ -122,14 +122,14 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		if area.get_parent().has_method("_get_damage_amount"):
 			var node = area.get_parent() as Node
 			healt_amount -= node.damage_amount
-			print("Health amount = ", healt_amount)
+			print("Health amount = ", healt_amount) # TODO test
 		
 		if area.get_parent().has_method("_get_money_value"):
 			var node = area.get_parent() as Node
 			money_amount += node.money_value
 			PlayerStats.player_money = money_amount;
 			area.get_parent().queue_free()
-			print("Money amount = ", money_amount)
+			print("Money amount = ", money_amount)  # TODO test
 			
 	if healt_amount <= 0:
 		get_tree().change_scene_to_file("res://scene/Gameover.tscn")
