@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://dm84msbhn4psu"]
+[gd_scene load_steps=60 format=3 uid="uid://dm84msbhn4psu"]
 
 [ext_resource type="Script" path="res://src/platform_player.gd" id="1_5hyfm"]
 [ext_resource type="Texture2D" uid="uid://ddjsc5l3hsrsk" path="res://sprites/fposter,small,wall_texture,square_product,600x600.jpg" id="1_msj3m"]
@@ -210,10 +210,10 @@ tracks/1/path = NodePath("Sprite2D:region_rect")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Rect2(7, 16, 8, 8), Rect2(15, 16, 8, 8)]
+"values": [Rect2(7, 16, 8, 8)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -626,7 +626,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_rt2g8"]
 resource_name = "harfang_te_nique_ta_mere"
 length = 0.8
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1059,10 +1058,17 @@ animation = &"Player_Jump"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v54ke"]
 animation = &"Player_Run"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m75pe"]
+animation = &"harfang_fly"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o0u1r"]
+animation = &"harfang_te_nique_ta_mere"
+
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pyu51"]
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y2gdy"]
+priority = 0
 advance_mode = 2
 advance_condition = &"jump"
 
@@ -1085,6 +1091,7 @@ advance_mode = 2
 advance_condition = &"iddle"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lxe7e"]
+priority = 0
 advance_mode = 2
 advance_condition = &"jump"
 
@@ -1093,6 +1100,7 @@ switch_mode = 2
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bm60l"]
+priority = 2
 advance_mode = 2
 advance_condition = &"airborn"
 
@@ -1125,13 +1133,29 @@ advance_condition = &"bumped"
 advance_mode = 2
 advance_condition = &"running"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_e44de"]
+advance_mode = 2
+advance_condition = &"grounded"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dgv84"]
+advance_mode = 2
+advance_condition = &"flying"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vmlg1"]
+advance_mode = 2
+advance_condition = &"firing"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_b48ll"]
+switch_mode = 2
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_guf4s"]
 allow_transition_to_self = true
 reset_ends = true
 states/Caribou_iddle/node = SubResource("AnimationNodeAnimation_yybqi")
-states/Caribou_iddle/position = Vector2(102, 390)
+states/Caribou_iddle/position = Vector2(441, 441)
 states/Caribou_run/node = SubResource("AnimationNodeAnimation_q4r85")
-states/Caribou_run/position = Vector2(204, 273)
+states/Caribou_run/position = Vector2(296, 323)
 states/End/position = Vector2(-98, 338)
 states/Player_Airborn/node = SubResource("AnimationNodeAnimation_e3wch")
 states/Player_Airborn/position = Vector2(511, 111)
@@ -1142,10 +1166,14 @@ states/Player_Iddle/position = Vector2(296, 99)
 states/Player_Jump/node = SubResource("AnimationNodeAnimation_fm1nx")
 states/Player_Jump/position = Vector2(628, -50)
 states/Player_Run/node = SubResource("AnimationNodeAnimation_v54ke")
-states/Player_Run/position = Vector2(638, 293)
+states/Player_Run/position = Vector2(628, 323)
 states/Start/position = Vector2(114, 99)
-transitions = ["Start", "Player_Iddle", SubResource("AnimationNodeStateMachineTransition_pyu51"), "Player_Iddle", "Player_Jump", SubResource("AnimationNodeStateMachineTransition_y2gdy"), "Player_Jump", "Player_Airborn", SubResource("AnimationNodeStateMachineTransition_n68cl"), "Player_Airborn", "Player_Iddle", SubResource("AnimationNodeStateMachineTransition_0b27r"), "Player_Iddle", "Player_Run", SubResource("AnimationNodeStateMachineTransition_4evwo"), "Player_Run", "Player_Iddle", SubResource("AnimationNodeStateMachineTransition_5riim"), "Player_Run", "Player_Jump", SubResource("AnimationNodeStateMachineTransition_lxe7e"), "Player_Dead", "End", SubResource("AnimationNodeStateMachineTransition_tktgu"), "Player_Iddle", "Player_Airborn", SubResource("AnimationNodeStateMachineTransition_bm60l"), "Player_Jump", "Player_Iddle", SubResource("AnimationNodeStateMachineTransition_u3uq7"), "Player_Run", "Player_Airborn", SubResource("AnimationNodeStateMachineTransition_dvs2w"), "Player_Iddle", "Caribou_run", SubResource("AnimationNodeStateMachineTransition_7wu2l"), "Caribou_run", "Caribou_iddle", SubResource("AnimationNodeStateMachineTransition_rnp8l"), "Player_Run", "Caribou_run", SubResource("AnimationNodeStateMachineTransition_5a8r4"), "Caribou_run", "Player_Run", SubResource("AnimationNodeStateMachineTransition_gd0wp"), "Caribou_iddle", "Player_Run", SubResource("AnimationNodeStateMachineTransition_4hs1a")]
-graph_offset = Vector2(-293, 45)
+states/harfang_fly/node = SubResource("AnimationNodeAnimation_m75pe")
+states/harfang_fly/position = Vector2(435, -156)
+states/harfang_te_nique_ta_mere/node = SubResource("AnimationNodeAnimation_o0u1r")
+states/harfang_te_nique_ta_mere/position = Vector2(435, -258)
+transitions = ["Start", "Player_Iddle", SubResource("AnimationNodeStateMachineTransition_pyu51"), "Player_Iddle", "Player_Jump", SubResource("AnimationNodeStateMachineTransition_y2gdy"), "Player_Jump", "Player_Airborn", SubResource("AnimationNodeStateMachineTransition_n68cl"), "Player_Airborn", "Player_Iddle", SubResource("AnimationNodeStateMachineTransition_0b27r"), "Player_Iddle", "Player_Run", SubResource("AnimationNodeStateMachineTransition_4evwo"), "Player_Run", "Player_Iddle", SubResource("AnimationNodeStateMachineTransition_5riim"), "Player_Run", "Player_Jump", SubResource("AnimationNodeStateMachineTransition_lxe7e"), "Player_Dead", "End", SubResource("AnimationNodeStateMachineTransition_tktgu"), "Player_Iddle", "Player_Airborn", SubResource("AnimationNodeStateMachineTransition_bm60l"), "Player_Jump", "Player_Iddle", SubResource("AnimationNodeStateMachineTransition_u3uq7"), "Player_Run", "Player_Airborn", SubResource("AnimationNodeStateMachineTransition_dvs2w"), "Player_Iddle", "Caribou_run", SubResource("AnimationNodeStateMachineTransition_7wu2l"), "Caribou_run", "Caribou_iddle", SubResource("AnimationNodeStateMachineTransition_rnp8l"), "Player_Run", "Caribou_run", SubResource("AnimationNodeStateMachineTransition_5a8r4"), "Caribou_run", "Player_Run", SubResource("AnimationNodeStateMachineTransition_gd0wp"), "Caribou_iddle", "Player_Run", SubResource("AnimationNodeStateMachineTransition_4hs1a"), "harfang_fly", "Player_Iddle", SubResource("AnimationNodeStateMachineTransition_e44de"), "Player_Jump", "harfang_fly", SubResource("AnimationNodeStateMachineTransition_dgv84"), "harfang_fly", "harfang_te_nique_ta_mere", SubResource("AnimationNodeStateMachineTransition_vmlg1"), "harfang_te_nique_ta_mere", "harfang_fly", SubResource("AnimationNodeStateMachineTransition_b48ll")]
+graph_offset = Vector2(-227, -283)
 
 [node name="platformer_caribou" type="CharacterBody2D"]
 script = ExtResource("1_5hyfm")
@@ -1186,6 +1214,8 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/airborn = false
 parameters/conditions/bumped = false
 parameters/conditions/caribou = false
+parameters/conditions/firing = false
+parameters/conditions/flying = false
 parameters/conditions/grounded = false
 parameters/conditions/iddle = false
 parameters/conditions/jump = false
@@ -1195,6 +1225,8 @@ script = ExtResource("3_jxcec")
 [connection signal="bumped" from="." to="AnimationTree" method="_on_platformer_caribou_bumped"]
 [connection signal="is_airborn" from="." to="AnimationTree" method="_on_platform_player_is_airborn"]
 [connection signal="is_charging" from="." to="AnimationTree" method="_on_platformer_caribou_is_charging"]
+[connection signal="is_firing" from="." to="AnimationTree" method="_on_platform_player_is_firing"]
+[connection signal="is_flying" from="." to="AnimationTree" method="_on_platform_player_is_flying"]
 [connection signal="is_grounded" from="." to="AnimationTree" method="_on_platform_player_is_grounded"]
 [connection signal="is_iddling" from="." to="AnimationTree" method="_on_platform_player_is_iddling"]
 [connection signal="is_jumping" from="." to="AnimationTree" method="_on_platform_player_is_jumping"]

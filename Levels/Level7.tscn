@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=4 uid="uid://g37c4hf7k7b4"]
+[gd_scene load_steps=5 format=4 uid="uid://sxx5dsbw7u7u"]
 
 [ext_resource type="TileSet" uid="uid://0iiaklhetwlj" path="res://Ressources/Tilesets/tileset.tres" id="1_uq4ds"]
 [ext_resource type="Texture2D" uid="uid://d31ew1v7fw02l" path="res://Ressources/aurora.png" id="2_iaxpb"]
