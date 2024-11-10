@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3bn8thwt3fos"]
+[gd_scene load_steps=4 format=3 uid="uid://bvpwny100djdh"]
 
-[ext_resource type="Theme" uid="uid://dcbaw7faykseq" path="res://Ressources/theme.tres" id="1_jd1lo"]
+[ext_resource type="Theme" uid="uid://b1kw2l652g53w" path="res://Ressources/theme.tres" id="1_jd1lo"]
 [ext_resource type="Script" path="res://scene/ui_night_timer.gd" id="2_ugcye"]
 [ext_resource type="Texture2D" uid="uid://qsptlfkw7ojc" path="res://Ressources/moon.png" id="4_na17l"]
 
@@ -51,3 +51,9 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("4_na17l")
 stretch_mode = 5
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="ready" from="Timer" to="." method="_on_timer_ready"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
