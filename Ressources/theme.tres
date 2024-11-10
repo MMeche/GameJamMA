@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dcbaw7faykseq"]
+
+[ext_resource type="FontFile" uid="uid://p1ag8cgvyw3d" path="res://Ressources/Fonts/press-start.regular.ttf" id="1_cvi70"]
+
+[resource]
+Label/fonts/font = ExtResource("1_cvi70")
