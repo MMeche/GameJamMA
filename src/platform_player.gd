@@ -30,6 +30,9 @@ signal is_spinning
 # Get the gravity from the project settings so you can sync with rigid body nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+func _on_ready() -> void:
+	PlayerStats.player_body = self
+
 func _physics_process(delta):
 	
 	speed = speed_base

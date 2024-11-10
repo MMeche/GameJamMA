@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=4 uid="uid://vx8upvt7woiu"]
+[gd_scene load_steps=6 format=4 uid="uid://bmoiwjlcslh35"]
 
-[ext_resource type="PackedScene" uid="uid://c3bn8thwt3fos" path="res://scene/ui_night_timer.tscn" id="1_4dmmn"]
-[ext_resource type="TileSet" uid="uid://dlh5al2egrnie" path="res://Ressources/Tilesets/tileset.tres" id="1_pi7c0"]
-[ext_resource type="PackedScene" uid="uid://dmuyrobm65c0l" path="res://scene/ui_coin_life.tscn" id="2_fa3ny"]
+[ext_resource type="PackedScene" path="res://scene/ui_night_timer.tscn" id="1_4dmmn"]
+[ext_resource type="TileSet" uid="uid://0iiaklhetwlj" path="res://Ressources/Tilesets/tileset.tres" id="1_pi7c0"]
+[ext_resource type="PackedScene" path="res://scene/ui_coin_life.tscn" id="2_fa3ny"]
 
 [sub_resource type="Gradient" id="Gradient_44qg4"]
 offsets = PackedFloat32Array(0)
