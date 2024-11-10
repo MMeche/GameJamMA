@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://dm84msbhn4psu"]
+[gd_scene load_steps=80 format=3 uid="uid://dm84msbhn4psu"]
 
 [ext_resource type="Script" path="res://src/platform_player.gd" id="1_5hyfm"]
 [ext_resource type="Texture2D" uid="uid://ddjsc5l3hsrsk" path="res://sprites/fposter,small,wall_texture,square_product,600x600.jpg" id="1_msj3m"]
@@ -791,7 +791,6 @@ tracks/6/keys = {
 [sub_resource type="Animation" id="Animation_xd6du"]
 resource_name = "renard_jump"
 length = 0.8
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -945,7 +944,6 @@ tracks/5/keys = {
 [sub_resource type="Animation" id="Animation_qsd7y"]
 resource_name = "renard_spin"
 length = 0.5
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1064,6 +1062,18 @@ animation = &"harfang_fly"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o0u1r"]
 animation = &"harfang_te_nique_ta_mere"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2pxsk"]
+animation = &"renard_iddle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dyga0"]
+animation = &"renard_jump"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7snve"]
+animation = &"renard_run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_flrnr"]
+animation = &"renard_spin"
+
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pyu51"]
 advance_mode = 2
 
@@ -1138,6 +1148,7 @@ advance_mode = 2
 advance_condition = &"grounded"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dgv84"]
+switch_mode = 2
 advance_mode = 2
 advance_condition = &"flying"
 
@@ -1148,6 +1159,70 @@ advance_condition = &"firing"
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_b48ll"]
 switch_mode = 2
 advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_muw50"]
+advance_mode = 2
+advance_condition = &"jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kcvy1"]
+advance_mode = 2
+advance_condition = &"jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sve7b"]
+advance_mode = 2
+advance_condition = &"jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cchjw"]
+advance_mode = 2
+advance_condition = &"grounded"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_c0gor"]
+advance_mode = 2
+advance_condition = &"running"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7t1wq"]
+advance_mode = 2
+advance_condition = &"jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_c01rd"]
+advance_mode = 2
+advance_condition = &"iddle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5gdu1"]
+advance_mode = 2
+advance_condition = &"jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wh4jd"]
+advance_mode = 2
+advance_condition = &"caribou"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_52pfp"]
+advance_mode = 2
+advance_condition = &"caribou"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fnrgg"]
+advance_mode = 2
+advance_condition = &"spinning"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_icqp4"]
+advance_mode = 2
+advance_condition = &"spinning"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y50ar"]
+advance_mode = 2
+advance_condition = &"spinning"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wvbpt"]
+advance_mode = 2
+advance_condition = &"spinning"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fcp7v"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ax0yb"]
+advance_mode = 2
+advance_condition = &"spinning"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_guf4s"]
 allow_transition_to_self = true
@@ -1172,8 +1247,16 @@ states/harfang_fly/node = SubResource("AnimationNodeAnimation_m75pe")
 states/harfang_fly/position = Vector2(435, -156)
 states/harfang_te_nique_ta_mere/node = SubResource("AnimationNodeAnimation_o0u1r")
 states/harfang_te_nique_ta_mere/position = Vector2(435, -258)
-transitions = ["Start", "Player_Iddle", SubResource("AnimationNodeStateMachineTransition_pyu51"), "Player_Iddle", "Player_Jump", SubResource("AnimationNodeStateMachineTransition_y2gdy"), "Player_Jump", "Player_Airborn", SubResource("AnimationNodeStateMachineTransition_n68cl"), "Player_Airborn", "Player_Iddle", SubResource("AnimationNodeStateMachineTransition_0b27r"), "Player_Iddle", "Player_Run", SubResource("AnimationNodeStateMachineTransition_4evwo"), "Player_Run", "Player_Iddle", SubResource("AnimationNodeStateMachineTransition_5riim"), "Player_Run", "Player_Jump", SubResource("AnimationNodeStateMachineTransition_lxe7e"), "Player_Dead", "End", SubResource("AnimationNodeStateMachineTransition_tktgu"), "Player_Iddle", "Player_Airborn", SubResource("AnimationNodeStateMachineTransition_bm60l"), "Player_Jump", "Player_Iddle", SubResource("AnimationNodeStateMachineTransition_u3uq7"), "Player_Run", "Player_Airborn", SubResource("AnimationNodeStateMachineTransition_dvs2w"), "Player_Iddle", "Caribou_run", SubResource("AnimationNodeStateMachineTransition_7wu2l"), "Caribou_run", "Caribou_iddle", SubResource("AnimationNodeStateMachineTransition_rnp8l"), "Player_Run", "Caribou_run", SubResource("AnimationNodeStateMachineTransition_5a8r4"), "Caribou_run", "Player_Run", SubResource("AnimationNodeStateMachineTransition_gd0wp"), "Caribou_iddle", "Player_Run", SubResource("AnimationNodeStateMachineTransition_4hs1a"), "harfang_fly", "Player_Iddle", SubResource("AnimationNodeStateMachineTransition_e44de"), "Player_Jump", "harfang_fly", SubResource("AnimationNodeStateMachineTransition_dgv84"), "harfang_fly", "harfang_te_nique_ta_mere", SubResource("AnimationNodeStateMachineTransition_vmlg1"), "harfang_te_nique_ta_mere", "harfang_fly", SubResource("AnimationNodeStateMachineTransition_b48ll")]
-graph_offset = Vector2(-227, -283)
+states/renard_iddle/node = SubResource("AnimationNodeAnimation_2pxsk")
+states/renard_iddle/position = Vector2(1221, -71)
+states/renard_jump/node = SubResource("AnimationNodeAnimation_dyga0")
+states/renard_jump/position = Vector2(812, -88)
+states/renard_run/node = SubResource("AnimationNodeAnimation_7snve")
+states/renard_run/position = Vector2(806, 36)
+states/renard_spin/node = SubResource("AnimationNodeAnimation_flrnr")
+states/renard_spin/position = Vector2(1203, 190)
+transitions = ["Start", "Player_Iddle", SubResource("AnimationNodeStateMachineTransition_pyu51"), "Player_Iddle", "Player_Jump", SubResource("AnimationNodeStateMachineTransition_y2gdy"), "Player_Jump", "Player_Airborn", SubResource("AnimationNodeStateMachineTransition_n68cl"), "Player_Airborn", "Player_Iddle", SubResource("AnimationNodeStateMachineTransition_0b27r"), "Player_Iddle", "Player_Run", SubResource("AnimationNodeStateMachineTransition_4evwo"), "Player_Run", "Player_Iddle", SubResource("AnimationNodeStateMachineTransition_5riim"), "Player_Run", "Player_Jump", SubResource("AnimationNodeStateMachineTransition_lxe7e"), "Player_Dead", "End", SubResource("AnimationNodeStateMachineTransition_tktgu"), "Player_Iddle", "Player_Airborn", SubResource("AnimationNodeStateMachineTransition_bm60l"), "Player_Jump", "Player_Iddle", SubResource("AnimationNodeStateMachineTransition_u3uq7"), "Player_Run", "Player_Airborn", SubResource("AnimationNodeStateMachineTransition_dvs2w"), "Player_Iddle", "Caribou_run", SubResource("AnimationNodeStateMachineTransition_7wu2l"), "Caribou_run", "Caribou_iddle", SubResource("AnimationNodeStateMachineTransition_rnp8l"), "Player_Run", "Caribou_run", SubResource("AnimationNodeStateMachineTransition_5a8r4"), "Caribou_run", "Player_Run", SubResource("AnimationNodeStateMachineTransition_gd0wp"), "Caribou_iddle", "Player_Run", SubResource("AnimationNodeStateMachineTransition_4hs1a"), "harfang_fly", "Player_Iddle", SubResource("AnimationNodeStateMachineTransition_e44de"), "Player_Jump", "harfang_fly", SubResource("AnimationNodeStateMachineTransition_dgv84"), "harfang_fly", "harfang_te_nique_ta_mere", SubResource("AnimationNodeStateMachineTransition_vmlg1"), "harfang_te_nique_ta_mere", "harfang_fly", SubResource("AnimationNodeStateMachineTransition_b48ll"), "harfang_te_nique_ta_mere", "renard_jump", SubResource("AnimationNodeStateMachineTransition_muw50"), "harfang_fly", "renard_jump", SubResource("AnimationNodeStateMachineTransition_kcvy1"), "Player_Airborn", "renard_jump", SubResource("AnimationNodeStateMachineTransition_sve7b"), "renard_jump", "renard_iddle", SubResource("AnimationNodeStateMachineTransition_cchjw"), "renard_iddle", "renard_run", SubResource("AnimationNodeStateMachineTransition_c0gor"), "renard_run", "Player_Jump", SubResource("AnimationNodeStateMachineTransition_7t1wq"), "renard_run", "renard_iddle", SubResource("AnimationNodeStateMachineTransition_c01rd"), "renard_iddle", "Player_Jump", SubResource("AnimationNodeStateMachineTransition_5gdu1"), "renard_iddle", "Caribou_run", SubResource("AnimationNodeStateMachineTransition_wh4jd"), "renard_run", "Caribou_run", SubResource("AnimationNodeStateMachineTransition_52pfp"), "renard_run", "renard_spin", SubResource("AnimationNodeStateMachineTransition_fnrgg"), "Player_Run", "renard_spin", SubResource("AnimationNodeStateMachineTransition_icqp4"), "Player_Iddle", "renard_spin", SubResource("AnimationNodeStateMachineTransition_y50ar"), "Caribou_run", "renard_spin", SubResource("AnimationNodeStateMachineTransition_wvbpt"), "renard_spin", "renard_iddle", SubResource("AnimationNodeStateMachineTransition_fcp7v"), "renard_iddle", "renard_spin", SubResource("AnimationNodeStateMachineTransition_ax0yb")]
+graph_offset = Vector2(475.5, -78)
 
 [node name="platformer_caribou" type="CharacterBody2D"]
 script = ExtResource("1_5hyfm")
@@ -1220,6 +1303,7 @@ parameters/conditions/grounded = false
 parameters/conditions/iddle = false
 parameters/conditions/jump = false
 parameters/conditions/running = false
+parameters/conditions/spinning = false
 script = ExtResource("3_jxcec")
 
 [connection signal="bumped" from="." to="AnimationTree" method="_on_platformer_caribou_bumped"]
@@ -1231,3 +1315,5 @@ script = ExtResource("3_jxcec")
 [connection signal="is_iddling" from="." to="AnimationTree" method="_on_platform_player_is_iddling"]
 [connection signal="is_jumping" from="." to="AnimationTree" method="_on_platform_player_is_jumping"]
 [connection signal="is_running" from="." to="AnimationTree" method="_on_platform_player_is_running"]
+[connection signal="is_spinning" from="." to="AnimationTree" method="_on_platform_player_is_spinning"]
+[connection signal="animation_player_changed" from="AnimationTree" to="AnimationTree" method="_on_animation_player_changed"]

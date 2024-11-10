@@ -2,8 +2,11 @@ extends CharacterBody2D
 
 @onready var actionable_finder: Area2D = $Direction/ActionableFinder
 
-var speed = 55.0
-var jump_speed = -80.0
+var speed_base = 55.0
+var speed_spin = 110.0
+
+var speed
+var jump_speed = -120.0
 
 signal is_running(x:float)
 signal is_jumping
@@ -14,13 +17,14 @@ signal bumped
 signal is_charging
 signal is_flying
 signal is_firing
+signal is_spinning
 
 # Get the gravity from the project settings so you can sync with rigid body nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
 	
-
+	speed = speed_base
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor() and !$AnimationTree.get("parameters/conditions/caribou"):
 		velocity.y = jump_speed
@@ -28,14 +32,24 @@ func _physics_process(delta):
 	# Handle Flying
 	if Input.is_action_pressed("jump") and $AnimationTree.get("parameters/playback").get_current_node() == "Player_Jump" :
 		is_flying.emit()   
-		 
+	
+	# Handle the fox double jump
+	if Input.is_action_just_pressed("jump") and !is_on_floor() and $AnimationTree.get("parameters/playback").get_current_node() != "renard_jump" :
+		velocity.y += 1.5*jump_speed
+		is_jumping.emit()
+	
+	# Handle the spin attack move
+	if Input.is_action_just_pressed("SpinAttack") :
+		is_spinning.emit()
+	if $AnimationTree.get("parameters/playback").get_current_node() == "renard_spin" :
+		speed = speed_spin
+		
 	# Handle the Flying State
 	if $AnimationTree.get("parameters/playback").get_current_node() == "harfang_fly" or $AnimationTree.get("parameters/playback").get_current_node() == "harfang_te_nique_ta_mere":
 		if Input.is_action_pressed("Fire") :
-			is_firing.emit()
-			
+			is_firing.emit()	
 	# Add gravity
-		velocity.y += gravity/8 * delta
+		velocity.y += gravity/10 * delta
 	else :
 		velocity.y += gravity/2 * delta
 
