@@ -1,0 +1,124 @@
+[gd_scene load_steps=5 format=3 uid="uid://da20ke6yluqua"]
+
+[ext_resource type="Theme" uid="uid://dcbaw7faykseq" path="res://Ressources/theme.tres" id="1_bh8fu"]
+[ext_resource type="Texture2D" uid="uid://cauxpnjf1ek2s" path="res://Ressources/big_sun.png" id="1_qq0gy"]
+[ext_resource type="Script" path="res://scene/transition.gd" id="2_wwill"]
+[ext_resource type="Texture2D" uid="uid://bxrhugkpyh465" path="res://Ressources/big_moon.png" id="3_ja8ra"]
+
+[node name="Transition" type="Control" node_paths=PackedStringArray("day_window", "night_window", "day_text", "night_text", "count_day_text", "count_night_text")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_bh8fu")
+script = ExtResource("2_wwill")
+day_window = NodePath("DayTransition")
+night_window = NodePath("NightTransition")
+day_text = NodePath("DayTransition/VBoxContainer/VBoxContainer/DayText")
+night_text = NodePath("NightTransition/VBoxContainer/VBoxContainer/NightText")
+count_day_text = NodePath("DayTransition/VBoxContainer/VBoxContainer/DayCount")
+count_night_text = NodePath("NightTransition/VBoxContainer/VBoxContainer/NightCount")
+left_position = Vector2(-1000, 100)
+right_position = Vector2(1500, 100)
+center_position = Vector2(176, 100)
+transition_duration = null
+fade_duration = null
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -32.0
+offset_top = -20.0
+offset_right = 1213.0
+offset_bottom = 713.0
+color = Color(0.0509804, 0.0509804, 0.0509804, 1)
+
+[node name="DayTransition" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -156.0
+offset_top = -224.0
+offset_right = 156.0
+offset_bottom = 224.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DayTransition"]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="DayTransition/VBoxContainer"]
+custom_minimum_size = Vector2(800, 300)
+layout_mode = 2
+texture = ExtResource("1_qq0gy")
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DayTransition/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="DayText" type="Label" parent="DayTransition/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Retournons 
+au village !"
+horizontal_alignment = 1
+
+[node name="DayCount" type="Label" parent="DayTransition/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Jour 5"
+horizontal_alignment = 1
+
+[node name="NightTransition" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1576.0
+offset_top = -224.0
+offset_right = -776.0
+offset_bottom = 224.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NightTransition"]
+layout_mode = 2
+theme_override_constants/separation = 70
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="NightTransition/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="NightTransition/VBoxContainer"]
+custom_minimum_size = Vector2(800, 200)
+layout_mode = 2
+texture = ExtResource("3_ja8ra")
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NightTransition/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="NightText" type="Label" parent="NightTransition/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Partons explorer
+la fôret !"
+horizontal_alignment = 1
+
+[node name="NightCount" type="Label" parent="NightTransition/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Jour 5"
+horizontal_alignment = 1

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdwao8m2c6asq"
-path="res://.godot/imported/CheckedBox.png-d498e7d41c7b70e8a625489a8efc88ee.ctex"
+uid="uid://qsptlfkw7ojc"
+path="res://.godot/imported/moon.png-c03a7269ba7a84cb9ef9b9d76d1e5863.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ressources/DarkTheme/Icons/CheckedBox.png"
-dest_files=["res://.godot/imported/CheckedBox.png-d498e7d41c7b70e8a625489a8efc88ee.ctex"]
+source_file="res://Ressources/moon.png"
+dest_files=["res://.godot/imported/moon.png-c03a7269ba7a84cb9ef9b9d76d1e5863.ctex"]
 
 [params]
 

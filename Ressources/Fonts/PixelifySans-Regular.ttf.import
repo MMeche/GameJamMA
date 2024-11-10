@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cjgu6ncybgamv"
-path="res://.godot/imported/Ubuntu-L.ttf-22fac875b02b96b9b7f45870f633acac.fontdata"
+uid="uid://b70nlmv6o3g1g"
+path="res://.godot/imported/PixelifySans-Regular.ttf-42827ce652de390e73224533c9717f17.fontdata"
 
 [deps]
 
-source_file="res://Ressources/DarkTheme/Fonts/Ubuntu-L.ttf"
-dest_files=["res://.godot/imported/Ubuntu-L.ttf-22fac875b02b96b9b7f45870f633acac.fontdata"]
+source_file="res://Ressources/Fonts/PixelifySans-Regular.ttf"
+dest_files=["res://.godot/imported/PixelifySans-Regular.ttf-42827ce652de390e73224533c9717f17.fontdata"]
 
 [params]
 

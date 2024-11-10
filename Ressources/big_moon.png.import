@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmgjs0vujq2hl"
-path="res://.godot/imported/UnCheckedBox.png-4d58395126d0ebe7931659730cfd4f0f.ctex"
+uid="uid://bxrhugkpyh465"
+path="res://.godot/imported/big_moon.png-49721f2540956d90976d085e71940d93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ressources/DarkTheme/Icons/UnCheckedBox.png"
-dest_files=["res://.godot/imported/UnCheckedBox.png-4d58395126d0ebe7931659730cfd4f0f.ctex"]
+source_file="res://Ressources/big_moon.png"
+dest_files=["res://.godot/imported/big_moon.png-49721f2540956d90976d085e71940d93.ctex"]
 
 [params]
 

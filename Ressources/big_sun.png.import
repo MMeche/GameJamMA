@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4fru2hndfvr6"
-path="res://.godot/imported/UnCheckButtonDis.png-0468876eb550b21c664db210317fd741.ctex"
+uid="uid://cauxpnjf1ek2s"
+path="res://.godot/imported/big_sun.png-2f4c84e643a8e8a2d4e65038c9ebe544.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ressources/DarkTheme/Icons/UnCheckButtonDis.png"
-dest_files=["res://.godot/imported/UnCheckButtonDis.png-0468876eb550b21c664db210317fd741.ctex"]
+source_file="res://Ressources/big_sun.png"
+dest_files=["res://.godot/imported/big_sun.png-2f4c84e643a8e8a2d4e65038c9ebe544.ctex"]
 
 [params]
 

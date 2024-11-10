@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmuyrobm65c0l"]
+[gd_scene load_steps=5 format=3 uid="uid://dmuyrobm65c0l"]
 
-[ext_resource type="Theme" path="res://Ressources/DarkTheme/Dark.theme" id="1_gxu7l"]
+[ext_resource type="Theme" uid="uid://dcbaw7faykseq" path="res://Ressources/theme.tres" id="1_g7gcb"]
 [ext_resource type="Texture2D" uid="uid://djoprtd7oow52" path="res://Ressources/coin.png" id="2_4td6y"]
 [ext_resource type="Texture2D" uid="uid://cepy10hv0cjv3" path="res://Ressources/heart.png" id="3_nkx71"]
+[ext_resource type="Texture2D" uid="uid://qsptlfkw7ojc" path="res://Ressources/moon.png" id="4_t5tu1"]
 
 [node name="Ui" type="Control"]
 layout_mode = 3
@@ -11,7 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_gxu7l")
+theme = ExtResource("1_g7gcb")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(130, 146)
@@ -34,22 +35,24 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 theme_override_constants/separation = 10
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 10
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 texture = ExtResource("2_4td6y")
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 26
 text = "100"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 10
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(30, 30)
@@ -59,5 +62,38 @@ stretch_mode = 5
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 26
 text = "3"
+
+[node name="PanelContainer2" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(180, 100)
+layout_mode = 0
+offset_left = 914.0
+offset_top = 30.0
+offset_right = 1118.0
+offset_bottom = 130.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer2"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer2/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 2
+
+[node name="Label" type="Label" parent="PanelContainer2/MarginContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "100s"
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer2/MarginContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("4_t5tu1")
+stretch_mode = 5
