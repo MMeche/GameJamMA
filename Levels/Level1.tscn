@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://dduqwcybq8q15"]
+[gd_scene load_steps=10 format=4 uid="uid://dduqwcybq8q15"]
 
 [ext_resource type="TileSet" uid="uid://dlh5al2egrnie" path="res://Ressources/Tilesets/tileset.tres" id="1_gfgj6"]
 [ext_resource type="PackedScene" uid="uid://dm84msbhn4psu" path="res://scene/platformer_caribou.tscn" id="3_ps6l1"]
+[ext_resource type="PackedScene" uid="uid://dmuyrobm65c0l" path="res://scene/ui_coin_life.tscn" id="3_snwxq"]
 [ext_resource type="PackedScene" uid="uid://ccua2erxjoryb" path="res://scene/actionable.tscn" id="4_11f4q"]
+[ext_resource type="PackedScene" uid="uid://c3bn8thwt3fos" path="res://scene/ui_night_timer.tscn" id="4_rhrqg"]
 [ext_resource type="Resource" uid="uid://crqfduxavhdk7" path="res://dialogue/vieil_erable.dialogue" id="6_7hwti"]
 
 [sub_resource type="Gradient" id="Gradient_44qg4"]
@@ -40,11 +42,18 @@ tile_set = ExtResource("1_gfgj6")
 position = Vector2(75, 99)
 
 [node name="Camera2D" type="Camera2D" parent="platformer_caribou"]
+position = Vector2(3, -4)
 zoom = Vector2(6, 6)
-limit_left = 11
-limit_top = 2
+limit_left = 0
+limit_top = 0
 limit_right = 792
 limit_bottom = 170
+
+[node name="CanvasLayer" type="CanvasLayer" parent="platformer_caribou/Camera2D"]
+
+[node name="UiNightTimer" parent="platformer_caribou/Camera2D/CanvasLayer" instance=ExtResource("4_rhrqg")]
+
+[node name="UiCoinLife" parent="platformer_caribou/Camera2D/CanvasLayer" instance=ExtResource("3_snwxq")]
 
 [node name="Erable" parent="." instance=ExtResource("4_11f4q")]
 position = Vector2(96, 96)

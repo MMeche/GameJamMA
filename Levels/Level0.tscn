@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://cljfwthc84x8m"]
+[gd_scene load_steps=9 format=4 uid="uid://cljfwthc84x8m"]
 
 [ext_resource type="Texture2D" uid="uid://djc3xunpdlu2k" path="res://Ressources/village.png" id="1_3741e"]
 [ext_resource type="TileSet" uid="uid://dlh5al2egrnie" path="res://Ressources/Tilesets/tileset.tres" id="2_o0vr8"]
 [ext_resource type="PackedScene" uid="uid://dm84msbhn4psu" path="res://scene/platformer_caribou.tscn" id="3_4eto1"]
 [ext_resource type="PackedScene" uid="uid://ccua2erxjoryb" path="res://scene/actionable.tscn" id="4_b5tgb"]
+[ext_resource type="PackedScene" uid="uid://dmuyrobm65c0l" path="res://scene/ui_coin_life.tscn" id="4_digm8"]
 [ext_resource type="Resource" uid="uid://bfo3yyhg1gals" path="res://dialogue/museum.dialogue" id="5_0rrwx"]
 [ext_resource type="Resource" uid="uid://crqfduxavhdk7" path="res://dialogue/vieil_erable.dialogue" id="6_f646x"]
 
@@ -33,11 +34,16 @@ tile_set = ExtResource("2_o0vr8")
 position = Vector2(75, 99)
 
 [node name="Camera2D" type="Camera2D" parent="platformer_caribou"]
+position = Vector2(3, -4)
 zoom = Vector2(6, 6)
 limit_left = 11
 limit_top = 2
 limit_right = 792
 limit_bottom = 170
+
+[node name="CanvasLayer" type="CanvasLayer" parent="platformer_caribou/Camera2D"]
+
+[node name="UiCoinLife" parent="platformer_caribou/Camera2D/CanvasLayer" instance=ExtResource("4_digm8")]
 
 [node name="Museum" parent="." instance=ExtResource("4_b5tgb")]
 position = Vector2(380, 116)
