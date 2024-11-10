@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3phernxxv5dk"
-path="res://.godot/imported/grallace.webp-5138083b2eb7ea90526cef87c243763c.ctex"
+uid="uid://ba6xo14h5ta8q"
+path="res://.godot/imported/X.png-88cc0826c61b6f2fb60fdce35e58eccb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/grallace.webp"
-dest_files=["res://.godot/imported/grallace.webp-5138083b2eb7ea90526cef87c243763c.ctex"]
+source_file="res://sprites/X.png"
+dest_files=["res://.godot/imported/X.png-88cc0826c61b6f2fb60fdce35e58eccb.ctex"]
 
 [params]
 

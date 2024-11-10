@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://cv53h2dhb5aeu"
+path="res://.godot/imported/evolve_harfang.dialogue-dd71011ecca7ed02cfad62974a0d4a8a.tres"
+
+[deps]
+
+source_file="res://dialogue/evolve_harfang.dialogue"
+dest_files=["res://.godot/imported/evolve_harfang.dialogue-dd71011ecca7ed02cfad62974a0d4a8a.tres"]
+
+[params]
+
+defaults=true

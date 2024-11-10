@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://crqfduxavhdk7"
+path="res://.godot/imported/vieil_erable.dialogue-46b8ce681f78413ff817d97f5644ff59.tres"
+
+[deps]
+
+source_file="res://dialogue/vieil_erable.dialogue"
+dest_files=["res://.godot/imported/vieil_erable.dialogue-46b8ce681f78413ff817d97f5644ff59.tres"]
+
+[params]
+
+defaults=true
