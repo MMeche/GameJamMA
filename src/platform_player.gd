@@ -4,7 +4,10 @@ extends CharacterBody2D
 
 var speed = 300.0
 var jump_speed = -400.0
-var healt_amount = 20
+var healt_amount = PlayerStats.player_health
+var damage_amount = PlayerStats.player_damage
+var available_forms = PlayerStats.player_forms
+var money_amount = PlayerStats.player_money
 
 signal is_running(x:float)
 signal is_jumping
@@ -50,6 +53,12 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 			var node = area.get_parent() as Node
 			healt_amount -= node.damage_amount
 			print("Health amount = ", healt_amount)
+		
+		if area.get_parent().has_method("_get_money_value"):
+			var node = area.get_parent() as Node
+			money_amount += node.money_value
+			PlayerStats.player_money = money_amount;
+			print("Money amount = ", money_amount)
 			
 	if healt_amount <= 0:
 		get_tree().change_scene_to_file("res://scene/Gameover.tscn")
