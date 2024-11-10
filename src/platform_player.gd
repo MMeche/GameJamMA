@@ -33,6 +33,9 @@ signal is_spinning
 # Get the gravity from the project settings so you can sync with rigid body nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+func _on_ready() -> void:
+	PlayerStats.player_body = self
+
 func _physics_process(delta):
 	
 	speed = speed_base
@@ -138,5 +141,6 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 			print("Money amount = ", money_amount)  # TODO test
 			
 	if healt_amount <= 0:
+		GameManager.is_day = true
 		get_tree().change_scene_to_file("res://scene/Gameover.tscn")
 		

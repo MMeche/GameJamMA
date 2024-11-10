@@ -1,6 +1,13 @@
 ~ start
-Le vénérable érable : Mon petit ... 
-Nous avons besoin de toi !
-L'étoile du nord a besoin d'être secourueest en tombée dans la forêt boréale
-Va, pars à sa rescousse
+Le vénérable érable : Mon petit ...
+	Nous avons besoin de toi !
+	L'étoile du nord a besoin d'être secourue, elle est tombée dans la forêt boréale, 
+	Sans elle et sa lumière, nous seront condamné au froid de l'hiver...
+	Fais attention, des esprits polaires y rondent pour convoiter ses pouvoirs
+	Va, pars à sa rescousse dans la forêt la plus au nord du monde.
 => END
+
+# TODO à implémenter dans les variables globales
+~ nuit
+Le vénérable érable : Zzz...
+	Fais vite... le destin de l'étoile est entre tes mains...

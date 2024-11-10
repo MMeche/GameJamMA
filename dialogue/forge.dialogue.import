@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://bfs8pty003xlq"
+path="res://.godot/imported/forge.dialogue-6553512beb2fef4af12c8c4c1b143007.tres"
+
+[deps]
+
+source_file="res://dialogue/forge.dialogue"
+dest_files=["res://.godot/imported/forge.dialogue-6553512beb2fef4af12c8c4c1b143007.tres"]
+
+[params]
+
+defaults=true

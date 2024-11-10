@@ -1,0 +1,10 @@
+~ start
+Forge: Bienvenue, souhaites-tu améliorer ton arme ?
+Forge: Il me faudra 3 pièces
+- Oui [if PlayerStats.player_money >= 3]
+	set PlayerStats.player_money -= 3
+	set PlayerStats.player_damage += 1
+	Vous êtes devenu un peu plus fort
+- Non merci, le devoir m'appelle
+Forge: Bon courage mon grand
+=> END

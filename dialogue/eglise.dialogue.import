@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://dfc22lmx06flx"
+path="res://.godot/imported/eglise.dialogue-18a50382ba04a16da098ed0064e77f0f.tres"
+
+[deps]
+
+source_file="res://dialogue/eglise.dialogue"
+dest_files=["res://.godot/imported/eglise.dialogue-18a50382ba04a16da098ed0064e77f0f.tres"]
+
+[params]
+
+defaults=true

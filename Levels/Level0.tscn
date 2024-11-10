@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://bqge4aye7m2rx"]
+[gd_scene load_steps=14 format=4 uid="uid://bqge4aye7m2rx"]
 
 [ext_resource type="Texture2D" uid="uid://djc3xunpdlu2k" path="res://Ressources/village.png" id="1_3741e"]
 [ext_resource type="TileSet" uid="uid://0iiaklhetwlj" path="res://Ressources/Tilesets/tileset.tres" id="2_o0vr8"]
@@ -7,11 +7,18 @@
 [ext_resource type="PackedScene" uid="uid://dmuyrobm65c0l" path="res://scene/ui_coin_life.tscn" id="4_digm8"]
 [ext_resource type="Resource" uid="uid://bfo3yyhg1gals" path="res://dialogue/museum.dialogue" id="5_0rrwx"]
 [ext_resource type="Resource" uid="uid://crqfduxavhdk7" path="res://dialogue/vieil_erable.dialogue" id="6_f646x"]
+[ext_resource type="Script" path="res://src/actionable.gd" id="8_6va02"]
+[ext_resource type="Resource" uid="uid://dxsp8f536te0o" path="res://dialogue/cabane_transition_nuit.dialogue" id="9_ckxho"]
+[ext_resource type="Resource" uid="uid://bfs8pty003xlq" path="res://dialogue/forge.dialogue" id="10_l45rw"]
+[ext_resource type="Resource" uid="uid://dfc22lmx06flx" path="res://dialogue/eglise.dialogue" id="11_aq8en"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2bude"]
 size = Vector2(31, 59)
 
-[node name="Level4" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rswko"]
+size = Vector2(10.5, 10)
+
+[node name="Level2" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(422, 92)
@@ -61,3 +68,27 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Erable"]
 position = Vector2(-0.5, -17.5)
 shape = SubResource("RectangleShape2D_2bude")
+
+[node name="Area2D2" type="Area2D" parent="."]
+script = ExtResource("8_6va02")
+dialogue_ressource = ExtResource("9_ckxho")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(251.5, 109)
+shape = SubResource("RectangleShape2D_rswko")
+
+[node name="Area2D3" type="Area2D" parent="."]
+script = ExtResource("8_6va02")
+dialogue_ressource = ExtResource("10_l45rw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2(484, 117)
+shape = SubResource("RectangleShape2D_rswko")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("8_6va02")
+dialogue_ressource = ExtResource("11_aq8en")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(631.75, 114)
+shape = SubResource("RectangleShape2D_rswko")

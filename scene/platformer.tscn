@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://bfo3yyhg1gals" path="res://dialogue/museum.dialogue" id="3_dhtet"]
 [ext_resource type="PackedScene" uid="uid://pllpwxl2lnwy" path="res://ennemis/enemy.tscn" id="4_k7m5c"]
 [ext_resource type="PackedScene" uid="uid://nqk78c318shk" path="res://scene/platform_player.tscn" id="4_osd4l"]
-[ext_resource type="PackedScene" path="res://scene/Coins.tscn" id="6_dkktx"]
+[ext_resource type="PackedScene" uid="uid://40cxodljruog" path="res://scene/Coins.tscn" id="6_dkktx"]
 [ext_resource type="PackedScene" uid="uid://bdc5yuagcdl8y" path="res://ennemis/flying_enemy.tscn" id="7_fhsaf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sha44"]
@@ -44,6 +44,10 @@ dialogue_ressource = ExtResource("3_dhtet")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformNPC/Actionable"]
 shape = SubResource("CircleShape2D_sha44")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(322, 386)
+zoom = Vector2(2.005, 2.005)
+
 [node name="Enemy" parent="." instance=ExtResource("4_k7m5c")]
 position = Vector2(425, 422)
 
@@ -60,6 +64,6 @@ position = Vector2(153, 438)
 position = Vector2(332, 383)
 
 [node name="FlyinEnemy" parent="." instance=ExtResource("7_fhsaf")]
-position = Vector2(348, 396)
+position = Vector2(285, 430)
 collision_layer = 2
 collision_mask = 13
