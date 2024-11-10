@@ -38,16 +38,16 @@ func _physics_process(delta):
 		velocity.y = jump_speed
 		is_jumping.emit()
 	# Handle Flying
-	if Input.is_action_pressed("jump") and $AnimationTree.get("parameters/playback").get_current_node() == "Player_Jump" and harfang :
+	if Input.is_action_pressed("jump") and $AnimationTree.get("parameters/playback").get_current_node() == "Player_Jump" and PlayerStats.harfang :
 		is_flying.emit()   
 	
 	# Handle the fox double jump
-	if Input.is_action_just_pressed("jump") and !is_on_floor() and $AnimationTree.get("parameters/playback").get_current_node() != "renard_jump" and renard :
+	if Input.is_action_just_pressed("jump") and !is_on_floor() and $AnimationTree.get("parameters/playback").get_current_node() != "renard_jump" and PlayerStats.renard :
 		velocity.y += 1.5*jump_speed
 		is_jumping.emit()
 	
 	# Handle the spin attack move
-	if Input.is_action_just_pressed("SpinAttack") and renard :
+	if Input.is_action_just_pressed("SpinAttack") and PlayerStats.renard :
 		is_spinning.emit()
 	if $AnimationTree.get("parameters/playback").get_current_node() == "renard_spin" :
 		speed = speed_spin
@@ -65,7 +65,7 @@ func _physics_process(delta):
 	# Get the input direction.
 	var direction_left = Input.is_action_pressed("move_left")
 	var direction_right = Input.is_action_pressed("move_right")
-	if Input.is_action_pressed("Charge") && (direction_left||direction_right != false) and caribou:
+	if Input.is_action_pressed("Charge") && (direction_left||direction_right != false) and PlayerStats.caribou:
 		is_charging.emit()
 		
 	velocity.x = (int(direction_left)*-1 +int(direction_right)*1) * speed
@@ -109,13 +109,13 @@ func _process(delta: float) -> void:
 		$InterractableToggle.visible = false
 
 func _on_caribou_evolving() -> void :
-	caribou = true
+	PlayerStats.caribou = true
 
 func _on_harfang_evolving() -> void :
-	harfang = true
+	PlayerStats.harfang = true
 
 func _on_renard_evolving() -> void :
-	renard = true
+	PlayerStats.renard = true
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.name == "Hitbox":

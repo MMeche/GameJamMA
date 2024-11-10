@@ -3,11 +3,12 @@ extends Node2D
 @export var next_stage1: String
 @export var next_stage2: String
 @export var next_stage3: String
+
+
 # Called when the node enters the scene tree for the first time.
 
 func _ready() -> void:
-	pass # Replace with function body.
-
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -18,12 +19,15 @@ func _process(delta: float) -> void:
 	var exits3 = $nextStageZone3.get_overlapping_areas()
 	
 	if exits1.size() >0  and exits1[0] == $platformer_caribou/Direction/ActionableFinder:
+		
 		_load_next_scene(next_stage1)
 	
 	if exits2.size() >0  and exits2[0] == $platformer_caribou/Direction/ActionableFinder:
+		
 		_load_next_scene(next_stage2)
 		
 	if exits3.size() >0  and exits3[0] == $platformer_caribou/Direction/ActionableFinder:
+		
 		_load_next_scene(next_stage3)
 
 func _load_next_scene(next_stage) -> void:
