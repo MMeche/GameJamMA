@@ -1,12 +1,13 @@
-[gd_scene load_steps=13 format=4 uid="uid://bppltc7nuqael"]
+[gd_scene load_steps=14 format=4 uid="uid://bppltc7nuqael"]
 
 [ext_resource type="Script" path="res://Levels/levelManager.gd" id="1_6d0ao"]
 [ext_resource type="TileSet" uid="uid://0iiaklhetwlj" path="res://Ressources/Tilesets/tileset.tres" id="1_pi7c0"]
-[ext_resource type="PackedScene" path="res://scene/ui_night_timer.tscn" id="1_q481n"]
-[ext_resource type="PackedScene" path="res://scene/ui_coin_life.tscn" id="2_65kdj"]
-[ext_resource type="PackedScene" path="res://scene/Spikes.tscn" id="2_cnolg"]
+[ext_resource type="PackedScene" uid="uid://c3bn8thwt3fos" path="res://scene/ui_night_timer.tscn" id="1_q481n"]
+[ext_resource type="PackedScene" uid="uid://dmuyrobm65c0l" path="res://scene/ui_coin_life.tscn" id="2_65kdj"]
+[ext_resource type="PackedScene" uid="uid://djg1tqyvcujhb" path="res://scene/Spikes.tscn" id="2_cnolg"]
 [ext_resource type="PackedScene" uid="uid://dm84msbhn4psu" path="res://scene/platformer_caribou.tscn" id="6_amwqq"]
 [ext_resource type="PackedScene" uid="uid://dt3cahmc63v34" path="res://scene/actionnables_transfo.tscn" id="7_7vh65"]
+[ext_resource type="Resource" uid="uid://dl4wgtvglyefm" path="res://dialogue/evolve_renard.dialogue" id="8_fhu42"]
 
 [sub_resource type="Gradient" id="Gradient_44qg4"]
 offsets = PackedFloat32Array(0)
@@ -108,4 +109,5 @@ visible = false
 
 [node name="Actionnables_Transfo" parent="." instance=ExtResource("7_7vh65")]
 position = Vector2(169, 224)
+dialogue_ressource = ExtResource("8_fhu42")
 evolve = "renard"

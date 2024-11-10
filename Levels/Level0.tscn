@@ -4,14 +4,14 @@
 [ext_resource type="TileSet" uid="uid://0iiaklhetwlj" path="res://Ressources/Tilesets/tileset.tres" id="2_o0vr8"]
 [ext_resource type="PackedScene" uid="uid://dm84msbhn4psu" path="res://scene/platformer_caribou.tscn" id="3_4eto1"]
 [ext_resource type="PackedScene" uid="uid://ccua2erxjoryb" path="res://scene/actionable.tscn" id="4_b5tgb"]
-[ext_resource type="PackedScene" path="res://scene/ui_coin_life.tscn" id="4_digm8"]
+[ext_resource type="PackedScene" uid="uid://dmuyrobm65c0l" path="res://scene/ui_coin_life.tscn" id="4_digm8"]
 [ext_resource type="Resource" uid="uid://bfo3yyhg1gals" path="res://dialogue/museum.dialogue" id="5_0rrwx"]
 [ext_resource type="Resource" uid="uid://crqfduxavhdk7" path="res://dialogue/vieil_erable.dialogue" id="6_f646x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2bude"]
 size = Vector2(31, 59)
 
-[node name="Level2" type="Node2D"]
+[node name="Level4" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(422, 92)

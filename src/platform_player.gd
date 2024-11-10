@@ -5,7 +5,10 @@ extends CharacterBody2D
 var speed_base = 55.0
 var speed_spin = 110.0
 var speed
-var jump_speed = -130.0
+
+var base_jump_speed = -130
+var harfang_jump_speed = -160
+var jump_speed
 
 var healt_amount = PlayerStats.player_health
 var damage_amount = PlayerStats.player_damage
@@ -33,6 +36,9 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _physics_process(delta):
 	
 	speed = speed_base
+	jump_speed = base_jump_speed
+	if(PlayerStats.harfang):
+		jump_speed = harfang_jump_speed
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor() and !$AnimationTree.get("parameters/conditions/caribou"):
 		velocity.y = jump_speed
@@ -43,7 +49,7 @@ func _physics_process(delta):
 	
 	# Handle the fox double jump
 	if Input.is_action_just_pressed("jump") and !is_on_floor() and $AnimationTree.get("parameters/playback").get_current_node() != "renard_jump" and PlayerStats.renard :
-		velocity.y += 1.5*jump_speed
+		velocity.y += 1.5*base_jump_speed
 		is_jumping.emit()
 	
 	# Handle the spin attack move
@@ -57,7 +63,7 @@ func _physics_process(delta):
 		if Input.is_action_pressed("Fire") :
 			is_firing.emit()	
 	# Add gravity
-		velocity.y += gravity/10 * delta
+		velocity.y += gravity/12 * delta
 	else :
 		velocity.y += gravity/2 * delta
 
