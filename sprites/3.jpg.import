@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj8jkjw4n1otw"
-valid=false
+uid="uid://cferfxxq1qg4a"
+path="res://.godot/imported/3.jpg-1750c21e27cf0247f7b210ae9c1ce9bc.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://sprites/nozickGood.png"
+source_file="res://sprites/3.jpg"
+dest_files=["res://.godot/imported/3.jpg-1750c21e27cf0247f7b210ae9c1ce9bc.ctex"]
 
 [params]
 
