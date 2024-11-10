@@ -61,10 +61,10 @@ tracks/3/path = NodePath("Direction/ActionableFinder/CollisionShape2D:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": []
+"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_wya6d"]
@@ -225,6 +225,18 @@ tracks/4/path = NodePath("CollisionShape2D:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Direction/ActionableFinder/CollisionShape2D:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -468,7 +480,7 @@ states/Player_Run/node = SubResource("AnimationNodeAnimation_v54ke")
 states/Player_Run/position = Vector2(638, 293)
 states/Start/position = Vector2(123, 99)
 transitions = ["Start", "Player_Iddle", SubResource("AnimationNodeStateMachineTransition_pyu51"), "Player_Iddle", "Player_Jump", SubResource("AnimationNodeStateMachineTransition_y2gdy"), "Player_Jump", "Player_Airborn", SubResource("AnimationNodeStateMachineTransition_n68cl"), "Player_Airborn", "Player_Iddle", SubResource("AnimationNodeStateMachineTransition_0b27r"), "Player_Iddle", "Player_Run", SubResource("AnimationNodeStateMachineTransition_4evwo"), "Player_Run", "Player_Iddle", SubResource("AnimationNodeStateMachineTransition_5riim"), "Player_Run", "Player_Jump", SubResource("AnimationNodeStateMachineTransition_lxe7e"), "Player_Dead", "End", SubResource("AnimationNodeStateMachineTransition_tktgu"), "Player_Iddle", "Player_Airborn", SubResource("AnimationNodeStateMachineTransition_bm60l"), "Player_Jump", "Player_Iddle", SubResource("AnimationNodeStateMachineTransition_u3uq7"), "Player_Run", "Player_Airborn", SubResource("AnimationNodeStateMachineTransition_dvs2w")]
-graph_offset = Vector2(-170, 134)
+graph_offset = Vector2(-171, 91)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mew47"]
 size = Vector2(16, 24)

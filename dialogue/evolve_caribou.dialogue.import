@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://bqmaw7kquc6w1"
+path="res://.godot/imported/evolve_caribou.dialogue-9cba1d0cf5e5fa43d41ff2c90a9d83c4.tres"
+
+[deps]
+
+source_file="res://dialogue/evolve_caribou.dialogue"
+dest_files=["res://.godot/imported/evolve_caribou.dialogue-9cba1d0cf5e5fa43d41ff2c90a9d83c4.tres"]
+
+[params]
+
+defaults=true
