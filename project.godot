@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 PlayerStats="*res://Global Variables/Player_Stats.gd"
 Museum="*res://Global Variables/museum.gd"
+GameManager="*res://Global Variables/Game_Manager.gd"
 
 [display]
 

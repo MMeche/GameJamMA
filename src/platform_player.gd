@@ -135,5 +135,6 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 			print("Money amount = ", money_amount)  # TODO test
 			
 	if healt_amount <= 0:
+		GameManager.is_day = true
 		get_tree().change_scene_to_file("res://scene/Gameover.tscn")
 		

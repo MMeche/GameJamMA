@@ -40,7 +40,7 @@ func _ready() -> void:
 	add_child(wait_timer)
 	
 	# MOVE
-	if is_day:
+	if GameManager.is_day:
 		day_to_night()
 	else:
 		night_to_day()
