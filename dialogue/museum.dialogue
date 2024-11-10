@@ -17,13 +17,11 @@ Musée: Nous avons {{Museum.museum_money + Museum.money_given}} pièces à ton n
 	set Museum.invest_mode = true
 	set Museum.invest_made = true
 	=>< money_selection
-#	TODO soustraire sous au joueur
 	=> choices
 - Récolter les fonds [if Museum.museum_money > 0]
 	Musée: Combien souhaites-tu récupérer ?
 	set Museum.invest_mode = false
 	=>< money_selection
-#	TODO ajout sous joueur
 	=> choices
 - Partir
 	Musée: Au revoir, à bientôt

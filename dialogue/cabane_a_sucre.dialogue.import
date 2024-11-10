@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://bv1nyv5lnk8d0"
+path="res://.godot/imported/cabane_a_sucre.dialogue-7560a9d46d1d4657818c5fe0643d1b98.tres"
+
+[deps]
+
+source_file="res://dialogue/cabane_a_sucre.dialogue"
+dest_files=["res://.godot/imported/cabane_a_sucre.dialogue-7560a9d46d1d4657818c5fe0643d1b98.tres"]
+
+[params]
+
+defaults=true

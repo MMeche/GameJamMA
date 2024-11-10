@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://dxsp8f536te0o"
+path="res://.godot/imported/cabane_transition_nuit.dialogue-c6ff5eb0d3948e7a185af1707e064f0d.tres"
+
+[deps]
+
+source_file="res://dialogue/cabane_transition_nuit.dialogue"
+dest_files=["res://.godot/imported/cabane_transition_nuit.dialogue-c6ff5eb0d3948e7a185af1707e064f0d.tres"]
+
+[params]
+
+defaults=true

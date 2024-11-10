@@ -1,0 +1,11 @@
+~ start
+Cabane à sucre: Bienvenue dans la cabane !
+	Au menu du jour : [[Sirop d'érable |Pancake |Bacon | Soupe aux pois| Oreille de Crisse]]
+	Souhaites-tu une part ? Il te faudra 5 pièces
+- Oui [if PlayerStats.player_money >= 5]
+	set PlayerStats.player_money -= 5
+	set PlayerStats.player_health = PlayerStats.health_max
+	Votre santé a été restaurée
+- Non merci
+Cabane à sucre: Bonne journée !
+=> END

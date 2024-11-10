@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dstdg2v7royqa"]
+
+[node name="Tmp" type="Node2D"]
+
+[node name="Night" type="AudioStreamPlayer" parent="."]
+
+[node name="Day" type="AudioStreamPlayer" parent="."]

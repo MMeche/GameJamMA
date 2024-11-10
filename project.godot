@@ -18,8 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-PlayerStats="*res://Global Variables/Player_Stats.gd"
 Museum="*res://Global Variables/museum.gd"
+PlayerStats="*res://Global Variables/Player_Stats.gd"
 GameManager="*res://Global Variables/Game_Manager.gd"
 
 [display]
@@ -73,7 +73,7 @@ SpinAttack={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/museum.dialogue", "res://dialogue/evolve_renard.dialogue", "<null>", "res://dialogue/vieil_erable.dialogue", "res://dialogue/evolve_caribou.dialogue", "res://dialogue/evolve_harfang.dialogue", "res://dialogue/main.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/museum.dialogue", "res://dialogue/evolve_renard.dialogue", "<null>", "res://dialogue/vieil_erable.dialogue", "res://dialogue/evolve_caribou.dialogue", "res://dialogue/evolve_harfang.dialogue", "res://dialogue/cabane_a_sucre.dialogue", "res://dialogue/forge.dialogue", "res://dialogue/eglise.dialogue", "res://dialogue/cabane_transition_nuit.dialogue")
 
 [layer_names]
 
