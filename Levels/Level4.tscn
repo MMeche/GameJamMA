@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Levels/levelManager.gd" id="1_85n72"]
 [ext_resource type="PackedScene" uid="uid://c3bn8thwt3fos" path="res://scene/ui_night_timer.tscn" id="1_j76oq"]
-[ext_resource type="TileSet" uid="uid://0iiaklhetwlj" path="res://Ressources/Tilesets/tileset.tres" id="1_pi7c0"]
+[ext_resource type="TileSet" uid="uid://dlh5al2egrnie" path="res://Ressources/Tilesets/tileset.tres" id="1_pi7c0"]
 [ext_resource type="PackedScene" uid="uid://dmuyrobm65c0l" path="res://scene/ui_coin_life.tscn" id="2_lc5qk"]
 [ext_resource type="PackedScene" uid="uid://djg1tqyvcujhb" path="res://scene/Spikes.tscn" id="2_n6kbq"]
 [ext_resource type="PackedScene" uid="uid://dm84msbhn4psu" path="res://scene/platformer_caribou.tscn" id="6_xgg67"]
@@ -79,7 +79,7 @@ shape = SubResource("RectangleShape2D_k5ett")
 position = Vector2(12, 144)
 
 [node name="Camera2D" type="Camera2D" parent="platformer_caribou"]
-position = Vector2(16, -7)
+position = Vector2(3, -4)
 zoom = Vector2(6, 6)
 limit_left = 0
 limit_top = 0

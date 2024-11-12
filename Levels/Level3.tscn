@@ -1,11 +1,11 @@
 [gd_scene load_steps=12 format=4 uid="uid://bf77cuv006oca"]
 
-[ext_resource type="TileSet" uid="uid://0iiaklhetwlj" path="res://Ressources/Tilesets/tileset.tres" id="1_4xh68"]
+[ext_resource type="TileSet" uid="uid://dlh5al2egrnie" path="res://Ressources/Tilesets/tileset.tres" id="1_4xh68"]
 [ext_resource type="PackedScene" uid="uid://c3bn8thwt3fos" path="res://scene/ui_night_timer.tscn" id="1_jfn7f"]
 [ext_resource type="Script" path="res://Levels/levelManager.gd" id="1_lmawd"]
 [ext_resource type="PackedScene" uid="uid://dm84msbhn4psu" path="res://scene/platformer_caribou.tscn" id="2_2wpot"]
 [ext_resource type="PackedScene" uid="uid://dmuyrobm65c0l" path="res://scene/ui_coin_life.tscn" id="2_300fw"]
-[ext_resource type="PackedScene" uid="uid://dt3cahmc63v34" path="res://scene/actionnables_transfo.tscn" id="6_2iy4k"]
+[ext_resource type="PackedScene" path="res://scene/actionnables_transfo.tscn" id="6_2iy4k"]
 
 [sub_resource type="Gradient" id="Gradient_44qg4"]
 offsets = PackedFloat32Array(0)
@@ -77,7 +77,7 @@ shape = SubResource("RectangleShape2D_dy8kl")
 position = Vector2(48, 11)
 
 [node name="Camera2D" type="Camera2D" parent="platformer_caribou"]
-position = Vector2(47, 42)
+position = Vector2(3, -4)
 zoom = Vector2(6, 6)
 limit_left = 0
 limit_top = 0

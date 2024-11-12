@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://c3bn8thwt3fos" path="res://scene/ui_night_timer.tscn" id="1_4dmmn"]
 [ext_resource type="Script" path="res://Levels/levelManager.gd" id="1_dquph"]
-[ext_resource type="TileSet" uid="uid://0iiaklhetwlj" path="res://Ressources/Tilesets/tileset.tres" id="1_pi7c0"]
+[ext_resource type="TileSet" uid="uid://dlh5al2egrnie" path="res://Ressources/Tilesets/tileset.tres" id="1_pi7c0"]
 [ext_resource type="PackedScene" uid="uid://dmuyrobm65c0l" path="res://scene/ui_coin_life.tscn" id="2_fa3ny"]
 [ext_resource type="PackedScene" uid="uid://dm84msbhn4psu" path="res://scene/platformer_caribou.tscn" id="5_e6w5s"]
-[ext_resource type="PackedScene" uid="uid://dt3cahmc63v34" path="res://scene/actionnables_transfo.tscn" id="6_7rhx5"]
+[ext_resource type="PackedScene" path="res://scene/actionnables_transfo.tscn" id="6_7rhx5"]
 [ext_resource type="Resource" uid="uid://cv53h2dhb5aeu" path="res://dialogue/evolve_harfang.dialogue" id="7_uqcg3"]
 
 [sub_resource type="Gradient" id="Gradient_44qg4"]
@@ -74,7 +74,7 @@ shape = SubResource("RectangleShape2D_nrg3q")
 position = Vector2(15, 169)
 
 [node name="Camera2D" type="Camera2D" parent="platformer_caribou"]
-position = Vector2(83, -5)
+position = Vector2(3, -4)
 zoom = Vector2(6, 6)
 limit_left = 0
 limit_top = 0

@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=4 uid="uid://iqk5lrbr0iu0"]
 
 [ext_resource type="Script" path="res://Levels/levelManager.gd" id="1_4mo7l"]
-[ext_resource type="TileSet" uid="uid://0iiaklhetwlj" path="res://Ressources/Tilesets/tileset.tres" id="1_gfgj6"]
+[ext_resource type="TileSet" uid="uid://dlh5al2egrnie" path="res://Ressources/Tilesets/tileset.tres" id="1_gfgj6"]
 [ext_resource type="PackedScene" uid="uid://dm84msbhn4psu" path="res://scene/platformer_caribou.tscn" id="2_x5xhl"]
 [ext_resource type="PackedScene" uid="uid://c3bn8thwt3fos" path="res://scene/ui_night_timer.tscn" id="3_1sn4s"]
 [ext_resource type="PackedScene" uid="uid://dmuyrobm65c0l" path="res://scene/ui_coin_life.tscn" id="4_x5fn0"]
@@ -29,7 +29,7 @@ z_index = 1
 position = Vector2(234, 108)
 
 [node name="Camera2D" type="Camera2D" parent="platformer_caribou"]
-position = Vector2(60, 6)
+position = Vector2(3, -4)
 zoom = Vector2(6, 6)
 limit_left = 0
 limit_top = 0
